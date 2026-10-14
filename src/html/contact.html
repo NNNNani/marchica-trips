@@ -35,17 +35,45 @@
   </header>
 
   <main id="contenu">
-    <!-- ===== Hero ===== -->
-    <section aria-labelledby="titre-contact" style="background:#0a3542;color:#fff">
-      <div class="container-site" style="display:grid;grid-template-columns:1.05fr .95fr;gap:2.6rem;align-items:center;padding-top:58px;padding-bottom:58px">
-        <div>
-          <span aria-hidden="true" style="display:block;width:38px;height:3px;background:#f2a11d;border-radius:2px;margin-bottom:1.1rem"></span>
-          <p class="eyebrow" style="color:#7fd1de">Parlons de votre prochaine escapade</p>
-          <h1 id="titre-contact" style="font-size:2.6rem;line-height:1.08;font-weight:800;margin:.6rem 0 .8rem;max-width:520px">Une question ? Contactez-nous.</h1>
-          <p style="font-size:.95rem;line-height:1.6;color:rgba(255,255,255,.85);max-width:470px;margin:0 0 1.6rem">Vous vous interrogez sur nos activités, sur la région de Marchica ou sur une information pratique ? Posez-nous vos questions : notre équipe vous répond avec plaisir.</p>
-          <a class="btn-primary" href="#formulaire">Écrire un message <span aria-hidden="true">→</span></a>
+    <!-- ===== Hero =====
+         Fond clair (crème -> sable) et non plus un aplat marine : le bleu marine
+         n'apparaît plus qu'en accent (panneau arrondi derrière la photo), ce qui
+         allège la page tout en gardant l'identité Marchica Trips. -->
+    <section aria-labelledby="titre-contact" style="background:linear-gradient(180deg,#f3eee3 0%,#faf7f1 78%)">
+      <div class="container-site" style="display:grid;grid-template-columns:1fr 1fr;gap:3.4rem;align-items:center;padding-top:52px;padding-bottom:58px">
+
+        <div style="max-width:520px">
+          <span aria-hidden="true" style="display:block;width:38px;height:3px;background:#f2a11d;border-radius:2px"></span>
+          <p class="eyebrow" style="margin:1.15rem 0 0">Parlons de votre prochaine escapade</p>
+          <h1 id="titre-contact" style="font-size:2.9rem;line-height:1.05;letter-spacing:-.02em;font-weight:800;color:#0b3442;margin:.6rem 0 1rem">Une question ?<br />Contactez-nous.</h1>
+          <p style="font-size:.97rem;line-height:1.7;color:#57707a;max-width:46ch;margin:0 0 1.9rem">Vous vous interrogez sur nos activités, sur la région de Marchica ou sur une information pratique ? Posez-nous vos questions : notre équipe vous répond avec plaisir.</p>
+          <a class="btn-primary" href="#formulaire" style="transition:background-color .18s ease, box-shadow .18s ease, transform .18s ease">Écrire un message <span aria-hidden="true">→</span></a>
         </div>
-        <img src="/images/acitivite1.jpg" alt="Observateurs d'oiseaux au bord de la lagune de Marchica, près de Nador" style="width:100%;height:300px;object-fit:cover;border-radius:16px" />
+
+        <figure style="margin:0">
+          <!-- Le panneau marine est calé sur la PHOTO uniquement (et non sur la figure),
+               sinon il déborde jusqu'à la légende. -->
+          <div style="position:relative">
+            <span aria-hidden="true" style="position:absolute;left:-14px;top:14px;right:14px;bottom:-14px;background:#0a3542;border-radius:18px"></span>
+
+            <div style="position:relative;border-radius:18px;overflow:hidden;box-shadow:0 16px 34px rgba(10,53,66,.14)">
+              <!-- Photo : lagune de Marchica (Mar Chica), Nador.
+                   Source : https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg
+                   Auteur : Houssain tork — Licence CC BY-SA 4.0. Recadrée pour le hero. -->
+              <img src="/images/lagune-marchica.jpg" width="1300" height="860"
+                   alt="La lagune de Marchica à Nador au coucher de soleil, devant les montagnes du Gourougou"
+                   style="display:block;width:100%;height:auto" />
+
+              <span style="position:absolute;left:14px;bottom:14px;display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.94);color:#0b3442;font-size:.74rem;font-weight:700;line-height:1;padding:.55rem .85rem;border-radius:999px;box-shadow:0 4px 12px rgba(10,53,66,.18)">
+                <span aria-hidden="true" style="width:7px;height:7px;border-radius:999px;background:#f2a11d"></span>
+                Au cœur de Marchica
+              </span>
+            </div>
+          </div>
+
+          <figcaption style="margin-top:1.6rem;text-align:right;font-size:.68rem;color:#57707a">Photo : Houssain tork — CC BY-SA 4.0</figcaption>
+        </figure>
+
       </div>
     </section>
 

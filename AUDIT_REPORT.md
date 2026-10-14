@@ -493,3 +493,105 @@ inchangés ⇒ **aucune régression visuelle**.
 
 `src/css/style.css` pourrait être nettoyé du scan Tailwind par une ligne
 `@source not "**/*.md";` — sans rapport avec la page Contact, proposée pour plus tard.
+
+---
+
+## 10. Mission Hero de Contact (14/10/2026)
+
+### 10.1 Constat initial
+
+Le hero de `contact.html` était un **aplat marine pleine largeur** : sombre, monotone,
+déséquilibré (texte à gauche, photo d'oiseaux à droite sans lien évident avec la destination).
+`acitivite1.jpg` montrait une observatrice d'oiseaux — certes réelle, mais **sans lecture
+immédiate de la lagune**.
+
+### 10.2 Choix d'image — démarche réelle
+
+Aucune image de `public/images/` ne représentait la lagune :
+
+| Fichier | Verdict |
+|---|---|
+| `acitivite1.jpg` | observatrice d'oiseaux — usage antérieur, pas de lecture « lagune » |
+| `actevity4.jpg` | **lac nord-américaine** (pins, « Summer Adventure », bostonwhaler.com) — écarté |
+| `hero_actevity.jpg` | déjà en hero d'Accueil **et** de Réservation — réutiliser l'aurait rendu Contact identique à Réservation |
+| autres | portraits d'activités, non liés au paysage |
+
+Une recherche Wikimedia Commons a identifié des photos authentiques de **Mar Chica (Nador)**.
+Après vérification des licences (toutes CC BY-SA), retenue :
+
+> **`Lagune Marchica.jpg`** — 5548×3699, **CC BY-SA 4.0**, auteur **Houssain tork**.
+> Source : <https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg>
+
+**Recadrage** : cadrage sur `x=310, y=0, 1300×860` pour supprimer le premier plan de coquillages
+trop chargé et concentrer le coucher de soleil, les montagnes et l'eau. Optimisation JPEG qualité 80
+→ **`public/images/lagune-marchica.jpg`, 1300×860, 239 Ko** (contre 780 Ko pour le hero du site).
+L'image a été **visualisée avant et après** recadrage.
+
+Correspondance avec la palette de la marque, non forcée mais réelle : or du soleil ≈ `#f2a11d`,
+eau turquoise ≈ `#0b6e81`, ombre des montagnes ≈ `#0a3542`.
+
+**Attribution** : légende visible sous la photo (« Photo : Houssain tork — CC BY-SA 4.0 »),
+commentaire HTML avec URL source, et § « Crédit photo » ajouté au `README.md`.
+
+### 10.3 Composition retenue
+
+| | Avant | Après |
+|---|---|---|
+| Fond | aplat `#0a3542` pleine largeur | **dégradé subtil `#f3eee3` → `#faf7f1`** (couleurs existantes) |
+| Marine | 100 % du hero | **accent uniquement** : panneau arrondi 18 px décalé de 14 px derrière la photo |
+| Titre | 2,6 rem, une ligne flottant à 520 px | **2,9 rem**, `line-height:1.05`, `letter-spacing:-.02em`, **retour à la ligne maîtrisé** |
+| Paragraphe | 470 px, blanc à 85 % | **46 ch**, `line-height:1.7`, `#57707a` |
+| Colonnes | `1.05fr / .95fr`, gap 2,6 rem | **`1fr / 1fr` égales (540,8 px mesurés)**, gap 3,4 rem |
+| Photo | `acitivite1.jpg` 300 px, coins 16 px | **lagune 1300×860**, coins 18 px, ombre, **panneau marine décalé** |
+| Surcharge | — | pastille « Au cœur de Marchica » (disque doré + blanc 94 %) + légende crédit |
+| Bouton | instantané | **transition 0,18 s** (limitée au bouton du hero, aucun autre bouton touché) |
+
+Le tout reste **nettement distinct** de la Réservation (photo pleine largeur + dégradé crème à gauche).
+
+### 10.4 Vérifications réellement exécutées
+
+**Contrastes WCAG 2.1 mesurés dans le navigateur** (fond réel remonté par la DOM) :
+
+| Élément | Rapport | Seuil | Verdict |
+|---|---|---|---|
+| H1 (46,4 px / 800) | **12,4:1** | 3 | AA ✔ |
+| Eyebrow (11,52 px / 800) | **5,51:1** | 4,5 | AA ✔ |
+| Paragraphe (15,52 px) | **4,9:1** | 4,5 | AA ✔ |
+| Légende photo (10,88 px) | **4,9:1** | 4,5 | AA ✔ |
+| Pastille (11,84 px / 700) | **13,26:1** | 4,5 | AA ✔ |
+| Bouton (blanc / `#0b6e81`) | **5,9:1** | 4,5 | AA ✔ |
+
+**Structure** : fond `linear-gradient(rgb(243,238,227) 0%, rgb(250,247,241) 78%)` ✔ ;
+`grid-template-columns: 540,797px 540,812px` (colonnes égales) ✔ ; H1 sur **2 lignes** ✔ ;
+**0 `<details>`**, 3 sections, **5 champs de formulaire inchangés** ✔.
+
+**Profondeur** : panneau marine décalé de **14 px** à gauche et en bas, calé sur la photo
+(un 1ᵉʳ essai l'était sur la `<figure>`, d'où un bloc débordant jusqu'à la légende — **corrigé**) ;
+pastille **entièrement contenue** dans l'image ✔.
+
+**Survol vérifié avec une vraie position de souris CDP** (et non un pseudo-état forcé, méthode
+qui avait donné un faux résultat) : repos `rgb(11,110,129)` → survol `rgb(9,90,106)` —
+**assombrissement réel**, transition `background-color .18s`, retour au repos confirmé ✔.
+
+**Images** : 3/3 chargées (`logo`, `lagune-marchica` 1300×860, `logo`), **0 cassée** ;
+`/images/lagune-marchica.jpg` → **200 (233 Ko)** ; **6 liens internes → tous 200** ✔.
+
+**Build** : `npm run build` **vert** ; `dist/src/html/contact.html` **13 923 o** ;
+l'image est bien copiée dans `dist/images/`.
+**CSS inchangé : même hash `style-Dnktqw8-.css` (8,59 Ko)** — **aucune règle personnalisée ajoutée**,
+toute la mise en page est en styles inline + classes existantes (`.eyebrow`, `.btn-primary`,
+`.container-site`).
+
+**Non-régression** : captures 1440 px d'Accueil, Activités et Réservation **octet à octet identiques**
+(2 307 842 / 2 311 915 / 1 386 866 o) ⇒ **aucun pixel altéré** hors page Contact.
+
+### 10.5 Limites assumées
+
+- Le focus clavier du bouton utilise l'anneau par défaut du navigateur (`.btn-primary` n'a pas de
+  `:focus-visible`). **Comportement strictement identique à avant** la mission — aucun recul, mais
+  un anneau de focus personnalisé reste à prévoir globalement.
+- La licence **CC BY-SA 4.0** impose la mention d'attribution : elle est en légende visible, en
+  commentaire HTML et dans le README. Elle est volontairement discrète mais **ne doit pas être supprimée**.
+- La photo étant sous licence share-alike, elle **ne peut pas** être réutilisée dans une œuvre sous
+  licence incompatible sans respecter les termes.
+- Mobile : non développé, comme demandé.

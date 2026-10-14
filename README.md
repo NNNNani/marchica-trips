@@ -29,6 +29,12 @@ Pages (URLs réelles servies par Vite) :
 > (ex. `actevitiy.html`). Les fichiers de 0 octet (`bateau.jpg`, `cuisine.jpg`, `gourougou.jpg`,
 > `hero-bg.jpg`, `kayak.jpg`) sont invalides et ne sont référencés par aucune page.
 
+> **Crédit photo** — `public/images/lagune-marchica.jpg` (hero de la page Contact) représente la
+> lagune de Marchica (Mar Chica) à Nador, au coucher de soleil. Photo de **Houssain tork**, licence
+> **CC BY-SA 4.0**, publiée sur [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lagune_Marchica.jpg)
+> et recadrée pour le hero. Le crédit est également affiché sous la photo. Aucune autre image du
+> dossier `public/images/` n'a été ajoutée ni modifiée.
+
 > La page Accueil vit dans `src/html/index.html` : `vite.config.js` la déclare en entrée `main`,
 > `public/index.html` redirige la racine `/` vers elle, et un middleware conserve `/` fonctionnel
 > en dev. Les liens « Accueil » des 3 pages pointent vers `/src/html/index.html`.
