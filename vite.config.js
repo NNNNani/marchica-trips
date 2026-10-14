@@ -27,6 +27,7 @@ export default defineConfig({
         activites: resolve(__dirname, 'src/html/actevitiy.html'),
         detail: resolve(__dirname, 'src/html/detail-actevity.html'),
         reservation: resolve(__dirname, 'src/html/reservation.html'),
+        contact: resolve(__dirname, 'src/html/contact.html'),
         apropos: resolve(__dirname, 'src/html/apropos.html'),
         faq: resolve(__dirname, 'src/html/faq.html'),
       },

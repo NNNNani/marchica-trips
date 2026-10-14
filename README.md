@@ -18,8 +18,9 @@ Pages (URLs réelles servies par Vite) :
 | Activités | `/src/html/actevitiy.html` |
 | Détail activité | `/src/html/detail-actevity.html` |
 | Réservation | `/src/html/reservation.html` |
+| Contact | `/src/html/contact.html` |
 | À propos | `/src/html/apropos.html` |
-| FAQ / Contact | `/src/html/faq.html` |
+| FAQ | `/src/html/faq.html` |
 
 > ⚠️ Les fichiers HTML doivent être ouverts **via Vite** (`npm run dev` ou `npm run preview`), jamais en double-clic (`file://`) : les chemins commençant par `/` ne se résolvent pas hors d'un serveur HTTP.
 > Vite mappe le dossier `public/` sur la racine d'URL : `public/images/photo.jpg` → `/images/photo.jpg`.

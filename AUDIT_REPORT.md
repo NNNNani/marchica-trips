@@ -361,3 +361,135 @@ La racine `/` ouvre bien la page Accueil (capture `racine.png`).
 - Pages coéquipiers non modifiées, toujours vides (0 o).
 - Liens `#` (réseaux sociaux, formulaire) et prix/durées : toujours en attente de données réelles.
 - Version mobile : non développée, comme demandé.
+
+## 9. Mission page Contact (14/10/2026)
+
+### 9.1 Fichiers créés / modifiés
+
+| Fichier | Rôle |
+|---|---|
+| `src/html/contact.html` | **créé** — nouvelle page Contact (12,06 Ko en build) |
+| `src/html/index.html` | lien « Contact » réorienté (nav + footer) + lien « FAQ » ajouté au footer |
+| `src/html/actevitiy.html` | idem |
+| `src/html/reservation.html` | idem |
+| `vite.config.js` | entrée `contact` ajoutée au build multipage |
+| `README.md` | ligne Contact ajoutée ; étiquette FAQ corrigée |
+| `AUDIT_REPORT.md` | ce §9 |
+
+Aucune page du coéquipier (`apropos`, `faq`, `detail-actevity`) modifiée : **ni contenu,
+ni structure, ni emplacement**. `faq.html` reste une page totalement indépendante.
+`public/images/` : **aucun fichier ajouté ni supprimé**, images existantes réutilisées.
+
+### 9.2 Redirection du lien « Contact » (point d'attention)
+
+Le nav comportait **déjà** un lien libellé « Contact », mais il pointait vers
+`/src/html/faq.html` (page du coéquipier, vide). **6 références** au total
+(nav + footer × 3 pages), toutes libellées « Contact », ont été réorientées vers
+`/src/html/contact.html` — **nav et footer**, pour éviter qu'un même libellé mène
+à deux destinations différentes. Les footers restent donc **strictement identiques**
+sur les 4 pages (vérifié). Les autres liens et leurs états actifs sont conservés.
+
+Conséquence, puis correction : ce faisant, `faq.html` était temporairement devenu orphelin.
+**Lien rétabli** — un item « FAQ → `/src/html/faq.html` » a été ajouté **au footer** des
+4 pages (nav conservé à 4 entrées conformes aux maquettes). Les footers restent donc
+**strictement identiques** sur les 4 pages (liste de liens comparée octet à octet).
+`faq.html` est ainsi accessible depuis le site **sans qu'aucun de ses contenus n'ait été
+touché, déplacé ni fusionné**.
+
+### 9.3 Identité de la page — distincte de Réservation
+
+| | Réservation | Contact |
+|---|---|---|
+| Hero | photo pleine largeur + dégradé crème, 3 étapes | **fond marine `#0a3542`**, texte + photo arrondie, accent doré |
+| Corps | grille `1.5fr 1fr` (formulaire large à gauche) | **formulaire centré** (`max-width:760px`) |
+| Champs | 7 (tél, activité, date, participants…) | **5** : nom, ville, e-mail, sujet, message |
+| Clôture | bandeau CTA photo pleine largeur | la page se termine sur le formulaire |
+| Sections | hero + corps + CTA | **3** : hero, coordonnées, formulaire |
+
+**Périmètre volontairement restreint** (consigne explicite) : la page Contact ne contient
+**que** l'introduction, les informations de contact et le formulaire de prise de contact.
+**Aucune section FAQ n'y figure** et aucun contenu de `faq.html` n'y a été repris ou déplacé.
+
+Aucune date, heure, participant, activité à réserver ni prix.
+Palette respectée : `#0a3542`, `#0b6e81`, `#faf7f1`, **`#f2a11d`** (accent doré sobre
+dans le hero — dans le reste du projet l'or n'était utilisé que pour les étoiles d'avis).
+
+**Coordonnées** : uniquement des données **déjà présentes** dans le projet
+(`contact@marchicatrips.com`, `+212 6 12 34 56 78`, `Nador, Maroc`, « du lundi au
+samedi — 9 h à 18 h », « réponse sous 24 h » — reprises de `reservation.html` et du
+footer). **Aucun numéro, e-mail, adresse ou horaire inventé.**
+
+### 9.4 Tests réellement exécutés
+
+**Build** : `npm run build` → **succès, 8 modules** (7 → 8) ;
+`dist/src/html/contact.html` présent (**12 062 o**). CSS inchangé (8,59 Ko, même hash `style-Dnktqw8-.css`).
+
+**HTTP (dev, port 5244)** : pages, logo et CSS → **toutes 200** ; `POST` vers la page
+(equivalent d'une soumission) → **200** (voir §9.5).
+
+**Images & liens (audit navigateur réel, les 4 pages)** :
+
+| Page | Images | Cassées | h1 | h2 | header/footer | `aria-current` nav |
+|---|---|---|---|---|---|---|
+| `index.html` | 12 | **0** | 1 | 7 | ✔ / ✔ | Accueil |
+| `actevitiy.html` | 16 | **0** | 1 | 6 | ✔ / ✔ | Activités |
+| `reservation.html` | 5 | **0** | 1 | 6 | ✔ / ✔ | *(sur le bouton « Réserver », comportement préexistant)* |
+| `contact.html` | 3 | **0** | 1 | 4 | ✔ / ✔ | Contact |
+
+**`<details>` (accordéons FAQ) présents dans `contact.html` : 0** — consigne respectée.
+**Composition de la page** : 3 sections seulement — `hero` → `coordonnées` → `formulaire`.
+Hiérarchie : `H1` → `H2 Plusieurs façons de nous parler` → `H3 Par e-mail / Par téléphone / Sur place`
+→ `H2 Envoyez-nous un message` (aucun saut de niveau).
+
+**Footer identique sur les 4 pages** : même liste de liens, dans le même ordre —
+`Accueil · Activités · À propos · Contact · FAQ` + réseaux + coordonnées.
+
+**9 URL internes testées → toutes 200**, dont `/src/html/contact.html` et `/src/html/faq.html`.
+
+**Formulaire (mesuré via CDP)** :
+- **5 champs, 5/5 obligatoires**, **0 champ sans `label` associé** (`for`/`id`), **0 champ réservé** ;
+- `autocomplete` : `name`, `address-level2`, `email` ; `aria-describedby` sur `nom`, `email`, `message` ;
+- options sujet : `Choisissez un sujet | Demande d'information | Question sur une activité | Partenariat | Autre` ;
+- bouton : `Envoyer le message` ;
+- **28 éléments focusables**, ordre de tabulation logique (skip-link en tête, puis nav, hero,
+  coordonnées, **5 champs**, envoi, footer) ;
+- `#email` invalide rejeté ✔ ; formulaire vide rejeté ✔ ;
+- **`minlength` vérifié avec une vraie frappe clavier** (`Input.dispatchKeyEvent`) :
+  `#message` = « abc » → `checkValidity()=false`, message natif
+  « Allongez ce texte jusqu'à 10 caractères ou plus (vous utilisez actuellement 3 caractères) » ;
+  `#nom` = « A » → `false` (« …2 caractères ou plus… ») ; formulaire complet saisi au clavier → `true`.
+  *Précision méthodologique : une affectation programmatique (`.value =` en JS) ne déclenche pas
+  `minlength` selon le spec HTML (« dirty value flag ») — un premier test écrit en JS donnait
+  donc un faux négatif, ce n'est pas un défaut du formulaire.*
+
+**Non-régression (captures 1440 px, valeurs réelles)** :
+
+| Page | Avant mission | Après contact | Après lien FAQ footer | Lecture |
+|---|---|---|---|---|
+| Accueil | 2 307 842 o | 2 307 842 o | 2 307 842 o | **identique octet à octet** (footer hors cadre à 2000 px) |
+| Activités | 2 311 365 o | 2 311 365 o | 2 311 915 o | **+550 o** = ajout du lien « FAQ » |
+| Réservation | 1 386 335 o | 1 386 335 o | 1 386 866 o | **+531 o** = ajout du lien « FAQ » |
+
+Le simple changement d'`href` (« Contact » réorienté) n'a **altéré aucun pixel** : captures
+strictement identiques. La **seule** différence postérieure est l'item « FAQ » ajouté au
+footer — modification volontaire. Les 3 footers ont été **capturés et contrôlés visuellement** :
+mêmes 5 liens, même ordre, même mise en page. Images (12 / 16 / 5), `h1` et `aria-current`
+inchangés ⇒ **aucune régression visuelle**.
+
+### 9.5 Limites assumées
+
+- **Aucun envoi réel** : `action="#"` / `method="post"` — le POST renvoie **200** et
+  ressert la page, donc la soumission **recharge sans confirmation ni envoi**.
+  Commentaire HTML explicite placé dans le formulaire ; **le branchement d'un service
+  d'envoi reste à faire** (aucun backend, aucune confirmation inventés).
+- **Section FAQ volontairement absente** de `contact.html` : aucune question/réponse n'y a
+  été ajoutée et **aucun contenu de `faq.html` n'y a été déplacé ni repris**. `faq.html`
+  demeure à **0 octet** (page du coéquipier, **non modifiée** : ni contenu, ni structure),
+  donc son rendu réel n'a jamais pu être observé d'ici.
+- **Liens `#` réseaux sociaux**, mentions légales et données métier : inchangés, en attente.
+- Version mobile : non développée, comme demandé.
+
+### 9.6 Recommandation (hors périmètre, non appliquée)
+
+`src/css/style.css` pourrait être nettoyé du scan Tailwind par une ligne
+`@source not "**/*.md";` — sans rapport avec la page Contact, proposée pour plus tard.
