@@ -1,0 +1,17 @@
+{
+  "name": "marchica-trips",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Site touristique dédié aux activités de la lagune de Marchica à Nador, Maroc.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "tailwindcss": "^4.1.14",
+    "vite": "^7.1.7"
+  }
+}
