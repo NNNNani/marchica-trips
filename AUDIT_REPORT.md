@@ -163,3 +163,72 @@ Pages coéquipiers toujours à 0,00 Ko (vides, hors périmètre).
   laissés intacts — à supprimer ou remplacer en accord avec l'équipe.
 - **Portraits témoignages** : aucune photo de portrait dans le projet ; en attente de
   visuels fournis ou d'une décision (initiales stylisées envisageables).
+
+## 7. Mission images — diagnostic des chemins (14/10/2026)
+
+### 7.1 Arborescence réelle inspectée
+
+Dossier unique : **`public/images/`** (le dossier `public/image/` **n'existe pas**).
+16 fichiers, mêmes noms et même casse que dans le HTML : `logo.svg` (534 o),
+`hero_actevity.jpg` (781 Ko, 1365×768), `tivity7.jpg` (12 Ko, 236×303), `acitivite1.jpg`,
+`acteviti2.jpg`, `actevitie3.jpg`, `actevity4/5/6/8.jpg` (valides) + 5 fichiers
+**de 0 octet** non référencés (`bateau`, `cuisine`, `gourougou`, `hero-bg`, `kayak.jpg`)
+et `public/favicon.ico` (0 o, plus référencé depuis la correction C1).
+
+### 7.2 Comparaison code ↔ fichiers réels
+
+- 37 références relevées (3 pages HTML + `src/css/style.css`) : **toutes** en
+  `/images/...` ou `/src/css/style.css`. Aucune `srcset`, **aucune `url(...)` d'image
+  en CSS** (seule exception : l'import Google Fonts, vérifié aussi dans le CSS compilé
+  `dist/assets/style-*.css`).
+- Aucun écart de casse, aucune extension erronée, **aucun chemin à corriger** : la règle
+  Vite imposée (`public/images/photo.jpg` → `/images/photo.jpg`) est déjà respectée.
+
+### 7.3 Tests HTTP réels (cause racine prouvée)
+
+| Contexte de service | `/src/css/style.css` | `/images/hero_actevity.jpg` | Images rendues ? |
+|---|---|---|---|
+| **Vite dev** (`npm run dev`, ports 5211/5222) | 200 | **200** | **OUI — 3 pages vérifiées en navigateur** |
+| **Vite preview** (`npm run preview`, port 5210) | 200 | **200** | OUI |
+| **Serveur statique simple, racine du projet** (simulé, port 5321) | **200** | **404** | NON |
+| **Double-clic `file://`** | échec (`file:///src/...`) | 404 | NON |
+
+**Cause racine** : `public/` n'est mappé sur l'URL racine (`/images/…`) que par **Vite**.
+Un serveur statique quelconque (Live Server, ouverture directe) sert le disque tel quel,
+où les fichiers sont à `/public/images/…` → **404 images alors que `/src/css/style.css`
+répond 200** (le dossier `src/` existe réellement à la racine). Ce delta reproduit
+exactement le symptôme décrit : « les images ne s'affichent pas alors que les fichiers
+existent », sans erreur de style — d'où l'absence de plainte sur le CSS.
+
+Confirmé aussi : aucun déploiement (workflow absent, `github.io/marchica-trips` → 404),
+branche `main` contient bien les images, aucun second projet parent, et **en mode dev
+Vite sert les URL en absolu quel que soit `base`** (le réglage ci-dessous n'affecte donc
+que le build).
+
+### 7.4 Corrections apportées
+
+- `vite.config.js` : ajout de `base: './'` → le build `dist/` génère des chemins relatifs
+  (`./images/…` à la racine, `../../images/…` depuis `src/html/`) : le build fonctionne
+  désormais depuis n'importe quel sous-dossier et en `file://` (images), **sans changer
+  une seule occurrence `/images/...` dans le HTML** (règle Vite respectée).
+- `README.md` : URLs périmées remplacées par les vraies (`/html/activites.html` →
+  `/src/html/actevitiy.html`, etc.) — en dev ces URL renvoyaient 200 mais servaient la
+  **page Accueil** (fallback SPA), et **404 en build** ; avertissement ajouté sur
+  l'usage obligatoire de Vite.
+
+### 7.5 Vérifications finales réelles
+
+- `npm run build` : **succès** (7 modules, `assets/style-*.css` ≈ 7,2 Ko).
+- HTTP après rebuild (dev) : 8 URL testées (`/`, 2 pages, 5 images) → **toutes 200**.
+- Navigateur (Edge headless, 1440 px) sur les 3 pages servies par Vite :
+  **toutes les images s'affichent** (hero, cartes, bannière, avatars, aside, logo).
+- `dist/images/` contient les 15 fichiers copiés depuis `public/images/`.
+
+### 7.6 Différence restante
+
+Aucune erreur de chemin ne subsiste dans le code. **Si des images restaient invisibles
+sur ta machine alors que `npm run dev` tourne**, ce ne peut plus être le code : restent à
+vérifier de ton côté (1) le port/URL réellement ouvert (le README périmé pointait une URL
+renvoyant la page Accueil), (2) un serveur dev lancé depuis un autre dossier ou resté
+ouvert avant mes corrections, (3) un rafraîchissement forcé Ctrl+F5 contre le cache du
+favicon/logo qui étaient en 0 octet à l'origine, (4) une extension bloqueuse d'images.

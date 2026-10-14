@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  base: './',
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
@@ -20,3 +21,4 @@ export default defineConfig({
     },
   },
 });
+
