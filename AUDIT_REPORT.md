@@ -232,3 +232,132 @@ vérifier de ton côté (1) le port/URL réellement ouvert (le README périmé p
 renvoyant la page Accueil), (2) un serveur dev lancé depuis un autre dossier ou resté
 ouvert avant mes corrections, (3) un rafraîchissement forcé Ctrl+F5 contre le cache du
 favicon/logo qui étaient en 0 octet à l'origine, (4) une extension bloqueuse d'images.
+
+## 8. Mission vérification Desktop + animations (14/10/2026)
+
+### 8.1 Recherche du brief du professeur — NON TROUVÉ
+
+Recherche exhaustive, **aucun brief original dans le projet** :
+
+- fichiers `.md/.txt/.pdf/.docx` : seuls `README.md`, `AUDIT_REPORT.md`,
+  `.github/PULL_REQUEST_TEMPLATE.md` (0 o) ;
+- historique Git (`--all`, tous les chemins, fichiers supprimés) : aucun `brief`,
+  `consigne`, `sujet`, `cahier` n'a jamais existé ;
+- branche `main`, `git stash` (vide) : rien de plus ;
+- issues GitHub du dépôt : **0 ouverte, 0 fermée**.
+
+Le brief n'a donc **pas** été consulté — il n'existe pas en clair ici, je ne l'ai pas
+reconstitué de mémoire. La vérification s'est appuyée sur ce qui existe réellement :
+le `README.md` (« Responsive and WCAG AA accessible website redesign », Tailwind CSS v4
+& Vite), les 4 maquettes de `referance/`, et les contraintes énoncées dans la mission.
+**À fournir si tu veux une conformité mot à mot au document du prof.**
+
+### 8.2 Déplacement préexistant de `index.html` (décision validée)
+
+Constat initial hors de mes actions : `index.html` avait été **déplacé** de la racine
+vers `src/html/index.html` (non commité), ce qui cassait `npm run build`
+(« Could not resolve entry module index.html ») et laissait 9 liens `/index.html` orphelins.
+Validation demandée puis accord : **on garde le fichier dans `src/html/`**.
+
+Corrections appliquées :
+
+| Fichier | Correction |
+|---|---|
+| `vite.config.js` | entrée `main` → `src/html/index.html` |
+| `src/html/index.html` | 3 liens `/index.html` → `/src/html/index.html` |
+| `src/html/actevitiy.html` | 3 liens (logo, nav, footer) |
+| `src/html/reservation.html` | 3 liens (logo, nav, footer) |
+| `public/index.html` | **créé** : redirection HTML sans JS (`meta refresh`) vers la page Accueil |
+| `vite.config.js` | middleware `racine-vers-accueil` : `/` → `/index.html` **en dev uniquement** |
+| `README.md` | URL Accueil mise à jour + note sur l'emplacement |
+
+Sans ces deux derniers points, la racine `/` — l'URL que Vite imprime au lancement —
+renvoyait **404**. Aucun JavaScript personnalisé ajouté (le meta-refresh est du HTML,
+le middleware est de la configuration Vite).
+
+### 8.3 Header / footer — déjà harmonisés, aucune correction
+
+Comparaison bloc par bloc des 3 pages (`<header>…</header>`, `<footer>…</footer>`) :
+
+- **Footers** : strictement identiques sur les 3 pages (2 803 o, comparaison `==` → `True`).
+- **Headers** : identiques hors état actif. Différences mesurées :
+  - `index.html` → `actevitiy.html` : **2 lignes**, uniquement le déplacement de
+    `aria-current="page"` (Accueil → Activités) ;
+  - `index.html` → `reservation.html` : **2 lignes**, `aria-current` sur Accueil puis sur le bouton Réserver.
+- **Lien header + footer** : les **mêmes 17 liens dans le même ordre** sur les 3 pages.
+- `aria-current="page"` : **exactement 1** par page.
+- `<title>` et `<meta description>` diffèrent — c'est normal et souhaité (SEO propre à chaque page).
+
+→ **Aucun écart de logo, couleur, typographie, dimension, espacement ou structure.**
+Le brief autorisant l'État actif à varier, **rien à corriger** ici.
+
+### 8.4 Animations des cartes d'activités
+
+Portée : **8 cartes d'activités uniquement** (`src/html/actevitiy.html`), via une nouvelle
+classe `card-activity` ajoutée au `<li class="card">`. Les 3 cartes témoignages
+(`<li class="card" style=…>`) et les cartes des autres pages **ne sont pas touchées** —
+vérifié : 8 cartes animées, `card-activity` absent de `index.html` et `reservation.html`.
+
+Ajout dans `src/css/style.css` (le seul CSS personnalisé) :
+
+| Effet | Valeur |
+|---|---|
+| Élévation | `translateY(-4px)` |
+| Ombre | `0 8px 24px rgba(10,53,66,.06)` → `0 14px 30px rgba(10,53,66,.14)` |
+| Transition | `0.18s ease` (transform + box-shadow) |
+| Zoom image | `scale(1.04)` en `0.3s ease` |
+| Focus | `:focus-visible` du bouton → contour `3px var(--color-primary)` offset `3px` |
+| Focus clavier | `:focus-within` → la carte s'élève comme au survol |
+| `prefers-reduced-motion` | transitions à `0s`, `transform: none` — **l'ombre de feedback est conservée** |
+
+Aucune structure, dimension ni mise en page modifiées.
+
+### 8.5 Tests réellement exécutés
+
+**Build** — `npm run build` : **succès**, 7 modules ; pages coéquipiers toujours 0,00 Ko.
+`assets/style-*.css` : **7,20 Ko** avant les animations → **7,94 Ko** avec elles (+0,74 Ko).
+
+> Observation mesurée : une fois ce §8 écrit, le build remonte à **8,59 Ko**.
+> **Tailwind v4 scanne aussi les fichiers `.md`** du projet et génère depuis ce rapport
+> des utilitaires que les pages n'utilisent pas. Preuve : en retirant temporairement
+> `AUDIT_REPORT.md`, le CSS retombe à **exactement 7,94 Ko** (même hash
+> `style-Dz8eH4sr.css`). Aucune page n'est affectée — les utilitaires réels proviennent
+> des `.html`, qui restent scannés. Correctif d'une ligne, si tu le souhaites :
+> `@source not "**/*.md";` dans `src/css/style.css` — **non appliqué ici**, hors périmètre
+> de cette mission.
+
+**HTTP (dev, port 5233)** — 7 URL testées → **toutes 200** :
+`/`, `/index.html`, les 3 pages, `/images/logo.svg`, `/src/css/style.css`.
+
+**Navigateur — captures 1440 px** (Edge headless) :
+`v2-index.png`, `v2-activites.png`, `v2-reservation.png` → tailles
+**octet-à-octet identiques** aux captures prises avant modification
+(2 307 842 / 2 311 365 / 1 386 335 o) ⇒ **aucune régression visuelle**.
+La racine `/` ouvre bien la page Accueil (capture `racine.png`).
+
+**Comportement réel des animations** — mesuré via Chrome DevTools Protocol sur Edge
+(`CSS.forcePseudoState`, aucune dépendance installée) :
+
+```
+[1] AU REPOS        carte transform:none   ombre:0 8px 24px rgba(10,53,66,.06)  img:none  transition:0.18s
+[2] :HOVER          carte transform:matrix(1,0,0,1,0,-4)  ombre:0 14px 30px rgba(10,53,66,.14)
+                    img transform:matrix(1.04,0,0,1.04,0,0)
+[3] :FOCUS-VISIBLE  outline:3px solid rgb(11,110,129)   carte(:focus-within):matrix(...,-4)
+[4] REDUIT MOTION   transform:none  img:none  transition:0s none  + ombre conservée
+```
+
+**Images et liens des 3 pages** (même session navigateur) :
+
+| Page | Images | Cassées | Anciens liens `/index.html` | header | footer |
+|---|---|---|---|---|---|
+| `index.html` | 12 | **0** | 0 | ✔ | ✔ |
+| `actevitiy.html` | 16 | **0** | 0 | ✔ | ✔ |
+| `reservation.html` | 5 | **0** | 0 | ✔ | ✔ |
+
+### 8.6 Réserve honnête
+
+- Le **brief du professeur n'a pas pu être consulté** (absent du projet) : la conformité
+  n'est établie que par rapport au README, aux maquettes et aux contraintes de la mission.
+- Pages coéquipiers non modifiées, toujours vides (0 o).
+- Liens `#` (réseaux sociaux, formulaire) et prix/durées : toujours en attente de données réelles.
+- Version mobile : non développée, comme demandé.

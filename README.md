@@ -14,7 +14,7 @@ Pages (URLs réelles servies par Vite) :
 
 | Page | URL |
 |---|---|
-| Accueil | `/index.html` (ou `/`) |
+| Accueil | `/src/html/index.html` (ou `/`, redirigé) |
 | Activités | `/src/html/actevitiy.html` |
 | Détail activité | `/src/html/detail-actevity.html` |
 | Réservation | `/src/html/reservation.html` |
@@ -27,3 +27,7 @@ Pages (URLs réelles servies par Vite) :
 > Images : placez les photos d'activités dans `public/images/` et référencez-les en `/images/...`
 > (ex. `actevitiy.html`). Les fichiers de 0 octet (`bateau.jpg`, `cuisine.jpg`, `gourougou.jpg`,
 > `hero-bg.jpg`, `kayak.jpg`) sont invalides et ne sont référencés par aucune page.
+
+> La page Accueil vit dans `src/html/index.html` : `vite.config.js` la déclare en entrée `main`,
+> `public/index.html` redirige la racine `/` vers elle, et un middleware conserve `/` fonctionnel
+> en dev. Les liens « Accueil » des 3 pages pointent vers `/src/html/index.html`.
