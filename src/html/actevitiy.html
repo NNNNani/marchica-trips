@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nos activités — Marchica Trips | Lagune de Nador</title>
+  <meta name="description" content="Découvrez les activités Marchica Trips sur la lagune de Nador : kayak, quad, balade en bateau, observation des oiseaux, randonnée, équitation et sports de plage." />
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header style="background:#0a3542">
+    <div class="container-site" style="display:flex;align-items:center;justify-content:space-between;height:64px">
+      <a href="/index.html" style="display:flex;align-items:center;gap:.6rem;text-decoration:none" aria-label="Marchica Trips — accueil">
+        <img src="/images/logo.svg" alt="" width="44" height="28" />
+        <span style="color:#fff;font-weight:800;letter-spacing:.06em;font-size:.95rem;line-height:1.1">MARCHICA<br /><span style="font-size:.68rem;font-weight:600;letter-spacing:.28em">TRIPS</span></span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul style="display:flex;gap:2rem;list-style:none;margin:0;padding:0">
+          <li><a class="nav-link" href="/index.html">Accueil</a></li>
+          <li><a class="nav-link" href="/src/html/actevitiy.html" aria-current="page">Activités</a></li>
+          <li><a class="nav-link" href="/src/html/apropos.html">À propos</a></li>
+          <li><a class="nav-link" href="/src/html/faq.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;align-items:center;gap:1.2rem">
+        <a href="/src/html/actevitiy.html" aria-label="Rechercher une activité" style="color:#fff;text-decoration:none">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
+        <a class="btn-primary" href="/src/html/reservation.html">Réserver</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- ===== Hero ===== -->
+    <section aria-labelledby="titre-activites" style="position:relative;min-height:380px;display:flex;align-items:center;overflow:hidden">
+      <img src="/images/hero_actevity.jpg" alt="Kayakiste pagayant sur la lagune de Marchica face aux montagnes du Rif" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" fetchpriority="high" />
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(250,247,241,.94) 0%,rgba(250,247,241,.6) 42%,rgba(10,53,66,0) 72%)" aria-hidden="true"></div>
+      <div class="container-site" style="position:relative;padding-top:48px;padding-bottom:48px">
+        <p class="eyebrow">Nos activités</p>
+        <h1 id="titre-activites" style="font-size:2.6rem;line-height:1.08;font-weight:800;margin:.6rem 0 .8rem;max-width:520px">Des expériences<br />pour tous les goûts</h1>
+        <p style="font-size:.95rem;color:#23434f;max-width:440px;margin:0 0 1.4rem">Explorez la lagune de Marchica et ses environs à travers une variété d'activités uniques et inoubliables.</p>
+        <ul style="display:flex;gap:2rem;list-style:none;margin:0;padding:0">
+          <li style="display:flex;gap:.55rem;align-items:center;font-size:.78rem;font-weight:700">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0b6e81" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Nador, Maroc<br /><span style="font-weight:500;color:#57707a">Au cœur de la lagune</span>
+          </li>
+          <li style="display:flex;gap:.55rem;align-items:center;font-size:.78rem;font-weight:700">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0b6e81" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            + 10<br /><span style="font-weight:500;color:#57707a">Activités uniques</span>
+          </li>
+          <li style="display:flex;gap:.55rem;align-items:center;font-size:.78rem;font-weight:700">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#0b6e81" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6v1H3v-1Z"/></svg>
+            4.9/5<br /><span style="font-weight:500;color:#57707a">Avis clients</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Filtres + grille ===== -->
+    <section aria-labelledby="titre-catalogue" style="padding:32px 0 8px">
+      <div class="container-site">
+        <h2 id="titre-catalogue" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Catalogue des activités</h2>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap">
+          <nav aria-label="Filtrer par catégorie" style="display:flex;gap:.7rem;flex-wrap:wrap">
+            <a class="pill" href="/src/html/actevitiy.html" aria-current="true">▦ Tous</a>
+            <a class="pill" href="/src/html/actevitiy.html" aria-current="false">▲ Sports nautiques</a>
+            <a class="pill" href="/src/html/actevitiy.html" aria-current="false">❧ Nature &amp; Découverte</a>
+            <a class="pill" href="/src/html/actevitiy.html" aria-current="false">▦ Culture &amp; Patrimoine</a>
+            <a class="pill" href="/src/html/actevitiy.html" aria-current="false">◷ Détente</a>
+          </nav>
+          <p style="margin:0;font-size:.8rem;color:#57707a">Trier par <span aria-hidden="true">⌄</span></p>
+        </div>
+
+        <ul style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;list-style:none;margin:0;padding:0">
+          <li class="card">
+            <img class="card-img" src="/images/hero_actevity.jpg" alt="Kayak au coucher du soleil sur la lagune de Marchica" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Sports nautiques</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Kayak dans la lagune</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Nador</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Explorez la lagune de Marchica en kayak et admirez la beauté naturelle de la région.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/actevity6.jpg" alt="Pilote en quad sur une piste forestière près de Nador" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Aventure</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Quad dans les dunes</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Nador</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Vivez une montée d'adrénaline au cœur des paysages sauvages du Rif.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/actevity4.jpg" alt="Bateau de plaisance avec passagers sur eaux calmes" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Excursion en mer</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Balade en bateau</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Marchica</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Profitez d'une balade en mer et admirez la lagune sous un autre angle.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/acitivite1.jpg" alt="Observation des oiseaux migrateurs dans la lagune" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Culture &amp; Patrimoine</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Observation des oiseaux</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Marchica</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Découvrez une faune riche et préservée dans un cadre naturel exceptionnel.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/actevity8.jpg" alt="Pratique du paddle sur la lagune par temps clair" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Sports nautiques</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Paddle au lever du jour</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Nador</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Glissez sur des eaux calmes et profitez du silence de la lagune.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/actevitie3.jpg" alt="Randonnée à cheval dans la nature près de Nador" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Nature &amp; Découverte</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Équitation nature</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Nador</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Parcourez les sentiers côtiers accompagné de guides locaux.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/actevity5.jpg" alt="Randonneurs en montagne dans le massif du Gourougou" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Nature &amp; Découverte</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Randonnée du Gourougou</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Nador</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Admirez la lagune depuis les hauteurs avec des panoramas uniques.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card-img" src="/images/acteviti2.jpg" alt="Partie de beach-volley sur le sable à Nador" loading="lazy" />
+            <div style="padding:1.1rem 1.2rem 1.3rem">
+              <p style="margin:0 0 .5rem"><span style="font-size:.7rem;font-weight:700;background:#e8f3f5;color:#0b6e81;border-radius:999px;padding:.25rem .7rem">Détente</span></p>
+              <h3 style="font-size:.92rem;font-weight:800;margin:0 0 .4rem">Détente à la plage</h3>
+              <p style="font-size:.76rem;color:#57707a;margin:0 0 .5rem">◷ Marchica</p>
+              <p style="font-size:.8rem;color:#57707a;margin:0 0 1rem">Profitez du sable et des activités de plage en famille ou entre amis.</p>
+              <a class="btn-primary" href="/src/html/detail-actevity.html" style="width:100%;justify-content:center;font-size:.8rem">Découvrir <span aria-hidden="true">→</span></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Activité en vedette ===== -->
+    <section aria-labelledby="titre-vedette" style="padding:48px 0">
+      <div class="container-site" style="display:grid;grid-template-columns:1.05fr 1fr 0.55fr;gap:2rem;align-items:center">
+        <div style="position:relative">
+          <img src="/images/actevity8.jpg" alt="Kayakiste vue de dos sur les eaux turquoise de la lagune" loading="lazy" style="width:100%;height:340px;object-fit:cover;border-radius:14px" />
+          <p style="position:absolute;left:16px;top:14px;margin:0"><span style="font-size:.7rem;font-weight:700;background:#fff;color:#0b6e81;border-radius:999px;padding:.3rem .8rem">Sports nautiques</span></p>
+          <p style="position:absolute;left:16px;bottom:14px;margin:0;font-size:.72rem;font-weight:700;color:#fff;background:rgba(0,0,0,.5);padding:.3rem .7rem;border-radius:8px">▣ 1 / 5</p>
+          <p style="position:absolute;right:16px;bottom:14px;margin:0;display:flex;gap:.5rem">
+            <a href="/src/html/detail-actevity.html" aria-label="Photo précédente" style="width:32px;height:32px;border-radius:999px;background:#fff;color:#0b3442;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800">‹</a>
+            <a href="/src/html/detail-actevity.html" aria-label="Photo suivante" style="width:32px;height:32px;border-radius:999px;background:#fff;color:#0b3442;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800">›</a>
+          </p>
+        </div>
+        <div>
+          <p class="eyebrow">Activité en vedette</p>
+          <h2 id="titre-vedette" style="font-size:1.6rem;font-weight:800;margin:.4rem 0 .8rem">Kayak dans la lagune</h2>
+          <p style="font-size:.8rem;color:#57707a;margin:0 0 .8rem">◷ Nador &nbsp;&nbsp; ◉ Marchica</p>
+          <p style="font-size:.86rem;color:#23434f;margin:0 0 1rem">Partez à la découverte de la lagune de Marchica en kayak. Une expérience unique entre eaux cristallines, nature préservée et paysages à couper le souffle.</p>
+          <h3 style="font-size:.85rem;font-weight:800;margin:0 0 .5rem">Ce qui est inclus :</h3>
+          <ul style="font-size:.84rem;color:#23434f;list-style:none;margin:0 0 1.2rem;padding:0;display:grid;gap:.3rem">
+            <li>✓ Équipement de kayak</li>
+            <li>✓ Guide professionnel</li>
+            <li>✓ Assurance</li>
+          </ul>
+          <a class="btn-primary" href="/src/html/reservation.html" style="width:100%;justify-content:center">Réserver cette activité <span aria-hidden="true">→</span></a>
+        </div>
+        <aside aria-label="Informations pratiques" style="background:#fff;border:1px solid #efe9db;border-radius:14px;padding:1.2rem;display:grid;gap:1rem">
+          <div style="display:flex;gap:.7rem;align-items:start">
+            <span aria-hidden="true" style="color:#0b6e81">◈</span>
+            <p style="margin:0;font-size:.78rem"><strong>Niveau</strong><br /><span style="color:#57707a">Débutant à intermédiaire</span></p>
+          </div>
+          <div style="display:flex;gap:.7rem;align-items:start">
+            <span aria-hidden="true" style="color:#0b6e81">●●</span>
+            <p style="margin:0;font-size:.78rem"><strong>Âge minimum</strong><br /><span style="color:#57707a">Tous les publics accompagnés</span></p>
+          </div>
+          <div style="display:flex;gap:.7rem;align-items:start">
+            <span aria-hidden="true" style="color:#0b6e81">◷</span>
+            <p style="margin:0;font-size:.78rem"><strong>Lieu de départ</strong><br /><span style="color:#57707a">Lagune de Marchica, Nador</span></p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== Témoignages ===== -->
+    <section aria-labelledby="titre-temoignages" style="padding:0 0 52px">
+      <div class="container-site">
+        <div style="display:flex;justify-content:space-between;align-items:end;margin-bottom:1.4rem">
+          <div>
+            <p class="eyebrow">Témoignages</p>
+            <h2 id="titre-temoignages" style="font-size:1.6rem;font-weight:800;margin:.4rem 0 0">Ils ont vécu l'aventure</h2>
+          </div>
+          <a href="/src/html/actevitiy.html" style="font-size:.8rem;font-weight:700;color:#0b6e81;text-decoration:none">Voir tous les avis <span aria-hidden="true">→</span></a>
+        </div>
+        <ul style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;list-style:none;margin:0;padding:0">
+          <li class="card" style="padding:1.3rem;display:flex;gap:1rem">
+            <img src="/images/actevitie3.jpg" alt="Portrait de Sophie L." width="48" height="48" loading="lazy" style="width:48px;height:48px;border-radius:999px;object-fit:cover;flex-shrink:0" />
+            <div>
+              <p style="font-size:.8rem;font-style:italic;margin:0 0 .5rem">« Une expérience incroyable ! L'équipe est au top et les paysages sont à couper le souffle. »</p>
+              <p style="font-size:.78rem;font-weight:800;margin:0">Sophie L.<br /><span style="font-weight:500;color:#57707a">Voyageuse</span></p>
+              <p style="color:#f2a11d;letter-spacing:.15em;margin:.3rem 0 0" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
+            </div>
+          </li>
+          <li class="card" style="padding:1.3rem;display:flex;gap:1rem">
+            <img src="/images/actevity6.jpg" alt="Portrait de Karim B." width="48" height="48" loading="lazy" style="width:48px;height:48px;border-radius:999px;object-fit:cover;flex-shrink:0" />
+            <div>
+              <p style="font-size:.8rem;font-style:italic;margin:0 0 .5rem">« Le quad dans les dunes était magique. Je recommande à 100 % ! »</p>
+              <p style="font-size:.78rem;font-weight:800;margin:0">Karim B.<br /><span style="font-weight:500;color:#57707a">Voyageur</span></p>
+              <p style="color:#f2a11d;letter-spacing:.15em;margin:.3rem 0 0" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
+            </div>
+          </li>
+          <li class="card" style="padding:1.3rem;display:flex;gap:1rem">
+            <img src="/images/actevity4.jpg" alt="Portrait de Lina M." width="48" height="48" loading="lazy" style="width:48px;height:48px;border-radius:999px;object-fit:cover;flex-shrink:0" />
+            <div>
+              <p style="font-size:.8rem;font-style:italic;margin:0 0 .5rem">« Tout était parfaitement organisé. Une vraie découverte de la région. »</p>
+              <p style="font-size:.78rem;font-weight:800;margin:0">Lina M.<br /><span style="font-weight:500;color:#57707a">Voyageuse</span></p>
+              <p style="color:#f2a11d;letter-spacing:.15em;margin:.3rem 0 0" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section aria-labelledby="titre-cta" style="position:relative;overflow:hidden">
+      <img src="/images/hero_actevity.jpg" alt="" aria-hidden="true" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" />
+      <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,53,66,.82) 0%,rgba(10,53,66,.35) 60%,rgba(10,53,66,.15) 100%)" aria-hidden="true"></div>
+      <div class="container-site" style="position:relative;display:flex;justify-content:space-between;align-items:center;padding-top:44px;padding-bottom:44px;gap:2rem">
+        <div style="max-width:520px">
+          <p class="eyebrow" style="color:#7fd1de">Prêt à partir ?</p>
+          <h2 id="titre-cta" style="color:#fff;font-size:1.5rem;font-weight:800;margin:.4rem 0 .5rem">Réservez votre prochaine aventure</h2>
+          <p style="color:rgba(255,255,255,.85);font-size:.85rem;margin:0 0 1.2rem">Des souvenirs inoubliables vous attendent à Marchica.</p>
+          <a class="btn-primary" href="/src/html/reservation.html">Réserver une activité <span aria-hidden="true">→</span></a>
+        </div>
+        <ul style="display:flex;gap:2rem;list-style:none;margin:0;padding:0;color:#fff;font-size:.75rem;font-weight:700;text-align:center">
+          <li>◈<br />Paiement<br />sécurisé</li>
+          <li>◷<br />Annulation<br />flexible</li>
+          <li>✦<br />Assistance<br />24/7</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:#0a3542;color:#fff">
+    <div class="container-site" style="display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:2rem;padding-top:40px;padding-bottom:28px">
+      <div>
+        <p style="display:flex;align-items:center;gap:.6rem;margin:0 0 .6rem">
+          <img src="/images/logo.svg" alt="" width="44" height="28" />
+          <span style="font-weight:800;letter-spacing:.06em;font-size:.95rem;line-height:1.1">MARCHICA<br /><span style="font-size:.68rem;font-weight:600;letter-spacing:.28em">TRIPS</span></span>
+        </p>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.75);margin:0">Explorez. Découvrez. Vivez.</p>
+      </div>
+      <nav aria-label="Liens utiles">
+        <h2 style="font-size:.75rem;font-weight:800;color:#3fb6c9;margin:0 0 .8rem">Liens utiles</h2>
+        <ul style="list-style:none;margin:0;padding:0;font-size:.8rem;display:grid;gap:.4rem">
+          <li><a href="/index.html" style="color:rgba(255,255,255,.8);text-decoration:none">Accueil</a></li>
+          <li><a href="/src/html/actevitiy.html" style="color:rgba(255,255,255,.8);text-decoration:none">Activités</a></li>
+          <li><a href="/src/html/apropos.html" style="color:rgba(255,255,255,.8);text-decoration:none">À propos</a></li>
+          <li><a href="/src/html/faq.html" style="color:rgba(255,255,255,.8);text-decoration:none">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 style="font-size:.75rem;font-weight:800;color:#3fb6c9;margin:0 0 .8rem">Suivez-nous</h2>
+        <p style="margin:0;display:flex;gap:.9rem">
+          <a href="#" aria-label="Facebook" style="color:#fff;text-decoration:none">f</a>
+          <a href="#" aria-label="Instagram" style="color:#fff;text-decoration:none">◉</a>
+          <a href="#" aria-label="YouTube" style="color:#fff;text-decoration:none">▶</a>
+          <a href="#" aria-label="TikTok" style="color:#fff;text-decoration:none">♪</a>
+        </p>
+      </div>
+      <address style="font-style:normal;font-size:.78rem;color:rgba(255,255,255,.8);display:grid;gap:.4rem;align-content:start">
+        <span>◉ Nador, Maroc</span>
+        <a href="mailto:contact@marchicatrips.com" style="color:rgba(255,255,255,.8)">✉ contact@marchicatrips.com</a>
+        <a href="tel:+212612345678" style="color:rgba(255,255,255,.8)">☎ +212 6 12 34 56 78</a>
+      </address>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.15)">
+      <div class="container-site" style="display:flex;justify-content:space-between;padding-top:14px;padding-bottom:14px;font-size:.72rem;color:rgba(255,255,255,.6)">
+        <p style="margin:0">© 2025 Marchica Trips. Tous droits réservés.</p>
+        <p style="margin:0">Mentions légales | Politique de confidentialité</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
