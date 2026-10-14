@@ -1,1 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
+@import "tailwindcss";
 
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --color-deep: #0a3542;
+  --color-deep-2: #0e4453;
+  --color-primary: #0e8aa0;
+  --color-primary-dark: #0b6e81;
+  --color-cream: #faf7f1;
+  --color-sand: #f3eee3;
+  --color-ink: #0b3442;
+  --color-muted: #57707a;
+  --color-line: #e7e0d2;
+  --color-star: #f2a11d;
+  --color-badge: #e8f3f5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container-site {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 32px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+}
+
+.handwritten {
+  font-style: italic;
+  font-weight: 600;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  line-height: 1;
+  backdrop-filter: blur(2px);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.btn-ghost-dark {
+  background: transparent;
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.btn-ghost-dark:hover {
+  background: rgba(11, 52, 66, 0.08);
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #efe9db;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(10, 53, 66, 0.06);
+}
+
+.card-img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+.icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: var(--color-badge);
+  color: var(--color-primary-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 12px rgba(10, 53, 66, 0.15);
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.86rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link[aria-current="page"] {
+  color: #fff;
+  border-bottom-color: var(--color-primary);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1px solid #efe9db;
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pill[aria-current="true"] {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: #fff;
+}
+
+.field-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-ink);
+}
+
+.field-input {
+  width: 100%;
+  font: inherit;
+  font-size: 0.88rem;
+  color: var(--color-ink);
+  background: #fff;
+  border: 1px solid #e2ddd0;
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+}
+
+.field-input::placeholder {
+  color: #9aa7ad;
+}
+
+.field-input:focus-visible {
+  outline: 3px solid rgba(14, 138, 160, 0.35);
+  outline-offset: 1px;
+  border-color: var(--color-primary);
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  background: #fff;
+  color: var(--color-ink);
+  font-weight: 700;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  z-index: 100;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}

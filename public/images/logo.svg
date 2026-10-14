@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 40" role="img" aria-label="Marchica Trips — lagune et montagnes">
+  <path d="M6 22 L20 8 L28 16 L36 6 L52 22 Z" fill="#ffffff"/>
+  <path d="M20 8 L24 12 L20 16 L16 12 Z" fill="#0a3542"/>
+  <path d="M36 6 L41 11 L36 16 L31 11 Z" fill="#0a3542"/>
+  <path d="M4 26 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#3fb6c9" stroke-width="3" stroke-linecap="round"/>
+  <path d="M8 32 q8 -5 16 0 t16 0 t16 0" fill="none" stroke="#0e8aa0" stroke-width="3" stroke-linecap="round"/>
+</svg>

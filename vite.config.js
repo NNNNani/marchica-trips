@@ -11,10 +11,11 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        activites: resolve(__dirname, 'html/activites.html'),
-        detail: resolve(__dirname, 'html/detail-activite.html'),
-        reservation: resolve(__dirname, 'html/reservation.html'),
-        faq: resolve(__dirname, 'html/faq.html'),
+        activites: resolve(__dirname, 'src/html/actevitiy.html'),
+        detail: resolve(__dirname, 'src/html/detail-actevity.html'),
+        reservation: resolve(__dirname, 'src/html/reservation.html'),
+        apropos: resolve(__dirname, 'src/html/apropos.html'),
+        faq: resolve(__dirname, 'src/html/faq.html'),
       },
     },
   },
