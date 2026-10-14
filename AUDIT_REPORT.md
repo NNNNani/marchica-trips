@@ -595,3 +595,132 @@ toute la mise en page est en styles inline + classes existantes (`.eyebrow`, `.b
 - La photo étant sous licence share-alike, elle **ne peut pas** être réutilisée dans une œuvre sous
   licence incompatible sans respecter les termes.
 - Mobile : non développé, comme demandé.
+
+---
+
+## 11. Mission migration CSS → Tailwind CSS v4 (14/10/2026)
+
+### 11.1 Périmètre et nature de la migration
+
+Migration **purement technique** : aucun redesign, aucune modification de couleur, de
+dimension, de disposition ni de contenu. Les imperfections visuelles existantes ont été
+**conservées telles quelles** (mission : reproduire l'avant à l'identique).
+
+| | Avant | Après |
+|---|---|---|
+| Styles en ligne `style=""` | **481** (index 142, actevitiy 170, reservation 87, contact 82) | **0** |
+| Classes CSS personnalisées utilisées | 15 familles | **0** |
+| `src/css/style.css` | 258 lignes (12 tokens + 31 règles + 1 `@media`) | **18 lignes** : `@import` + `@theme` uniquement |
+| JS personnalisé | aucun | aucun (inchangé) |
+| Dépendances ajoutées | — | **aucune** |
+
+Toutes les règles de `style.css` ont été réexprimées en utilitaires Tailwind v4 ;
+**`@apply` n'a pas été utilisé**. `.handwritten` (0 usage) a été supprimé avec le reste.
+
+### 11.2 Résultat — comparaison visuelle réelle
+
+Méthode : captures Edge headless **1414 px, hauteur/zoom/polices/scroll identiques**,
+avant (`shots-before/`) et après (`shots-after/`), puis **diff pixel par pixel**.
+
+| Page | Dimensions | Écart |
+|---|---|---|
+| `index.html` | 1414×2605 | **0 pixel** |
+| `actevitiy.html` | 1414×2654 | **0 pixel** |
+| `reservation.html` | 1414×1728 | **0 pixel** |
+| `contact.html` | 1414×2058 | **0 pixel** |
+
+→ **CORRESPONDANCE PIXEL PAR PIXEL PARFAITE sur les 4 pages.**
+Images : 12 / 16 / 5 / 3, **0 cassée** ; `h1` = 1 par page ; `style=""` = 0 ; classes
+legacy = 0.
+
+Vérification complémentaire **DOM/styles calculés sur tout le document** (248 à 276
+éléments par page) : seules des différences de **notation** subsistent, sans effet visuel —
+composition `box-shadow` Tailwind (couches transparentes), `align-items: start` ↔
+`flex-start`, `border-*-color` sur des bordures de largeur 0, `gap: normal` ↔ `0px`.
+
+### 11.3 États non visibles en capture — mesurés réellement (CDP)
+
+**Survol des cartes d'activités** (8 cartes), relevé au repos / `:hover` / `:focus-within` /
+`prefers-reduced-motion` :
+
+| État | Avant | Après | Verdict |
+|---|---|---|---|
+| repos | `translate:none` — ombre `0 8px 24px rgba(10,53,66,.06)` | idem | ✔ |
+| `:hover` | `translateY(-4px)` — ombre `0 14px 30px rgba(10,53,66,.14)` — img `scale(1.04)` | idem | ✔ |
+| `:focus-within` | identique au survol | idem | ✔ |
+| bouton au focus | `outline: 3px solid rgb(11,110,129)`, offset `3px` | idem | ✔ |
+| mouvement réduit | transitions `none`, `transform: none`, **ombre de feedback conservée** | idem | ✔ |
+
+*Nota* : Tailwind v4 encode le survol via les propriétés individuelles `translate:` /
+`scale:` au lieu de `transform:` — **rendu strictement identique** (d'où `transition-[translate,…]`
+et `transition-[scale]`).
+
+**Focus clavier des champs de formulaire** (Contact + Réservation) : `3px solid
+rgba(14,138,160,.35)`, offset `1px`, bordure `#0b6e81` — **identique à l'avant**.
+
+### 11.4 Bug réel détecté et corrigé pendant la migration
+
+`focus-visible:outline-[3px_solid_rgba(14,138,160,0.35)]` fait générer à Tailwind v4
+`outline-color: 3px solid rgba(…)` — **CSS invalide, donc ignoré** : le contour de focus
+des 12 champs (5 Contact + 7 Réservation) **disparaissait**. Non visible en capture
+(statique), détecté par inspection du CSS généré.
+Corrigé par décomposition en 3 utilitaires valides :
+`focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px]`.
+Mesure après correctif : **identique à l'avant** ✔.
+
+### 11.5 Pièges Tailwind v4 documentés (reproductibles)
+
+| Piège | Constat | Solution retenue |
+|---|---|---|
+| État actif nav | `aria-current-page:` génère `[aria-current-page="true"]` → **inopérant** | `aria-[current='page']:text-white` / `:border-primary` |
+| État actif pill | `.pill[aria-current="true"]` | variante `aria-current:` (mappe `[aria-current="true"]`) |
+| Couleurs alpha | `text-white/85` utilise `color-mix(in oklab,…)` → ~10 niveaux différents | hex-alpha arbitraire reproduisant exactement les `rgba()` d'origine (`#ffffffd9`, `cc`, `bf`, `99`, `fffffff0`, `ffffff26`) |
+| Dégradés | Tailwind ajoute `in oklab` | valeurs arbitraires sRGB forcées (`bg-[linear-gradient(180deg,#f3eee3_0%,#faf7f1_78%)]`) |
+| Transition | durée/courbe imposées `cubic-bezier(.4,0,.2,1)` | `ease-[ease]` |
+| `rgba()` | `bg-[rgba(…)]` **n'est pas généré** ; les formes hex le sont | hex-alpha |
+| Valeurs hors échelle | `0.72rem`, `1.6rem`, `1.9rem`… | arbitraires exacts (`text-[0.72rem]`) |
+| Conflits | `w-11` + `w-[38px]` : l'ordre généré décide | une seule valeur de taille |
+
+### 11.6 Build et CSS généré
+
+`npm run build` : **succès, 8 modules** ; 7 pages en sortie (`dist/src/html/`), dont les 3
+pages coéquipiers **toujours à 0,00 Ko**.
+`assets/style-*.css` : **29,06 Ko (gzip 6,29 Ko)** avec le CSS source allégé.
+Tous les utilitaires critiques ont été **vérifiés dans le CSS généré** (aria, `ease-[ease]`,
+hex-alpha, dégradés sRGB sans `in oklab`, `translate`, `scale`, `motion-reduce` — placé en
+dernier, donc bien prioritaire).
+
+### 11.7 Fichiers Markdown scannés par Tailwind — constat, correctif NON appliqué
+
+Constat confirmé : Tailwind v4 scanne aussi `AUDIT_REPORT.md` et `README.md` (racine).
+**Correctif testé puis écarté**, pour deux raisons mesurées :
+1. les deux formes testées (`@source not "**/*.md";` et `@source not "../../**/*.md";`)
+   ont fait **augmenter** le CSS (29,06 → 31,65 / 31,19 Ko) au lieu de le réduire ;
+2. il s'agit d'un **changement de configuration** qui dépasse le cadre strict de la
+   migration, sans gain démontré.
+
+**Cause réelle de cette inflation identifiée** : un répertoire **`HOME/` est apparu à la
+racine du projet** (contenant `.claude-omniroute`, **555 fichiers** dont de nombreux `.md`,
+`.js`, `.png`). Créé **pendant** cette mission (22:14:52), **non tracké par Git** (`?? HOME/`)
+— **il n'a pas été committé**. Tailwind le scanne et génère depuis lui **76 classes
+utilitaires orphelines** (`container`, `h-84`, `size-1`, `collapse`, `table-cell`,
+`ease-in-out`…), aucunement utilisées par les pages. **Recommandation : le supprimer ou
+l'ajouter à `.gitignore`.** Sans lui, le CSS retombe à 29,06 Ko.
+
+### 11.8 Pages du coéquipier — intactes
+
+`apropos.html`, `faq.html`, `detail-actevity.html` : **0 octet, non modifiées**
+(ni contenu, ni structure, ni emplacement). `faq.html` reste totalement indépendante et
+n'a pas été intégrée à `contact.html`.
+
+### 11.9 Réserves honnêtes
+
+- **Brief du professeur toujours absent** du dépôt : conformité établie sur le README, les
+  maquettes et les contraintes de mission, **pas sur le document original**.
+- La comparaison pixel prouve l'**identité du rendu en conditions de test** (Edge headless,
+  1440 px, desktop) ; elle ne constitue pas une certification sur d'autres navigateurs.
+- Un **autre agent/session travaillait simultanément** dans le dépôt : il a installé
+  `puppeteer` et `sharp` (modifiant `package.json` / `package-lock.json`), créé
+  `screenshot.mjs` et `screenshots/`, ainsi que le répertoire `HOME/`. **Rien de tout cela
+  n'a été committé par cette migration** — seuls les 5 fichiers de la mission le sont.
+- Mobile : non développé, comme demandé.
