@@ -5,7 +5,7 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   --color-deep: #0a3542;
   --color-deep-2: #0e4453;
-  --color-primary: #0e8aa0;
+  --color-primary: #0b6e81;
   --color-primary-dark: #0b6e81;
   --color-cream: #faf7f1;
   --color-sand: #f3eee3;
@@ -63,7 +63,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: var(--color-primary-dark);
+  background: color-mix(in srgb, var(--color-primary) 82%, black);
 }
 
 .btn-ghost {
