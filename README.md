@@ -16,7 +16,7 @@ Pages (URLs réelles servies par Vite) :
 |---|---|
 | Accueil | `/src/html/index.html` (ou `/`, redirigé) |
 | Activités | `/src/html/actevitiy.html` |
-| Détail activité | `/src/html/detail-actevity.html` |
+| Détail activité | `/src/html/detail-actevite.html` |
 | Réservation | `/src/html/reservation.html` |
 | Contact | `/src/html/contact.html` |
 | À propos | `/src/html/apropos.html` |

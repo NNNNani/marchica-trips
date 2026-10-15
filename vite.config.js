@@ -25,7 +25,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'src/html/index.html'),
         activites: resolve(__dirname, 'src/html/actevitiy.html'),
-        detail: resolve(__dirname, 'src/html/detail-actevity.html'),
+        detail: resolve(__dirname, 'src/html/detail-actevite.html'),
         reservation: resolve(__dirname, 'src/html/reservation.html'),
         contact: resolve(__dirname, 'src/html/contact.html'),
         apropos: resolve(__dirname, 'src/html/apropos.html'),
