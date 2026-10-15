@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Faites une demande de réservation pour une activité avec Marchica Trips à Nador.">
+    <title>Réservation — Marchica Trips</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+    <header class="site-header"><div class="site-header__inner">
+      <a class="brand" href="/" aria-label="Marchica Trips, accueil"><span class="brand__mark" aria-hidden="true">M</span><span><span class="brand__name">Marchica Trips</span><span class="brand__tagline">Nador, au bord de la lagune</span></span></a>
+      <nav class="desktop-nav" aria-label="Navigation principale"><a href="/">Accueil</a><a href="/html/activites.html">Activités</a><a href="/html/detail-activite.html">À la une</a><a href="/html/faq.html">FAQ</a><a aria-current="page" class="button" href="/html/reservation.html">Réserver</a></nav>
+      <details class="mobile-menu"><summary aria-label="Ouvrir le menu de navigation">Menu</summary><nav class="mobile-nav" aria-label="Navigation principale"><a href="/">Accueil</a><a href="/html/activites.html">Activités</a><a href="/html/detail-activite.html">À la une</a><a href="/html/faq.html">FAQ</a><a aria-current="page" href="/html/reservation.html">Réserver</a></nav></details>
+    </div></header>
+
+    <main id="contenu" class="mx-auto max-w-content px-5 py-12 md:px-8 md:py-16">
+      <div class="grid gap-10 lg:grid-cols-2">
+        <section>
+          <p class="eyebrow mb-3">On organise ça ensemble</p>
+          <h1 class="font-display text-4xl font-bold leading-tight md:text-5xl">Votre escapade commence par un petit mot</h1>
+          <p class="mt-5 text-lg leading-relaxed text-muted">Partagez vos envies et vos disponibilités. Notre équipe vous recontactera pour confirmer les détails de votre sortie.</p>
+          <div class="mt-8 rounded-card bg-lagoon p-6 text-white">
+            <h2 class="font-display text-2xl font-bold text-white">Avant de réserver</h2>
+            <ul class="mt-4 grid gap-3 text-white">
+              <li>Choisissez une activité et une date souhaitée.</li>
+              <li>Indiquez le nombre de participants.</li>
+              <li>Nous confirmerons la disponibilité et le tarif final.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section aria-labelledby="formulaire-titre">
+          <form method="post" class="rounded-card border border-line bg-paper p-6 shadow-card md:p-8">
+            <h2 id="formulaire-titre" class="section-title mb-2">Demande de réservation</h2>
+            <p class="mb-7 text-muted"><span aria-hidden="true">*</span> Champs obligatoires</p>
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div><label class="form-label" for="nom">Nom complet <span aria-hidden="true">*</span></label><input class="form-control" id="nom" name="nom" autocomplete="name" required minlength="2" placeholder="Votre nom" aria-describedby="nom-aide"><p class="mt-2 text-sm text-muted" id="nom-aide">Le nom utilisé pour vous recontacter.</p></div>
+              <div><label class="form-label" for="email">Adresse e-mail <span aria-hidden="true">*</span></label><input class="form-control" id="email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.com" aria-describedby="email-aide"><p class="mt-2 text-sm text-muted" id="email-aide">Nous vous répondrons à cette adresse.</p></div>
+              <div><label class="form-label" for="telephone">Téléphone</label><input class="form-control" id="telephone" name="telephone" type="tel" autocomplete="tel" placeholder="+212 6 00 00 00 00" aria-describedby="telephone-aide"><p class="mt-2 text-sm text-muted" id="telephone-aide">Avec l’indicatif de votre pays.</p></div>
+              <div><label class="form-label" for="activite">Activité souhaitée <span aria-hidden="true">*</span></label><select class="form-control" id="activite" name="activite" required><option value="" selected disabled>Choisissez une activité</option><option>Kayak au coucher du soleil</option><option>Balade en bateau</option><option>Randonnée au Gourougou</option><option>Oiseaux de la lagune</option><option>La table du Rif</option><option>Autre expérience</option></select></div>
+              <div><label class="form-label" for="date">Date souhaitée <span aria-hidden="true">*</span></label><input class="form-control" id="date" name="date" type="date" required aria-describedby="date-aide"><p class="mt-2 text-sm text-muted" id="date-aide">La date reste à confirmer selon la météo et les disponibilités.</p></div>
+              <div><label class="form-label" for="participants">Nombre de participants <span aria-hidden="true">*</span></label><input class="form-control" id="participants" name="participants" type="number" min="1" max="20" value="2" required aria-describedby="participants-aide"><p class="mt-2 text-sm text-muted" id="participants-aide">De 1 à 20 personnes par demande.</p></div>
+              <div class="sm:col-span-2"><label class="form-label" for="message">Un détail à nous partager ?</label><textarea class="form-control min-h-32" id="message" name="message" rows="4" placeholder="Une question, un besoin particulier…" aria-describedby="message-aide"></textarea><p class="mt-2 text-sm text-muted" id="message-aide">Facultatif — allergies, accessibilité ou autres préférences.</p></div>
+              <div class="sm:col-span-2"><button class="button w-full sm:w-auto" type="submit">Envoyer ma demande</button><p class="mt-4 text-sm text-muted">Formulaire de démonstration : aucune demande n’est transmise à un serveur pour le moment.</p><p id="form-status" class="mt-3 font-semibold text-lagoon-deep" role="status" aria-live="polite"></p></div>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <footer class="border-t border-line bg-paper"><div class="mx-auto flex max-w-content flex-col gap-4 px-5 py-8 text-sm text-muted md:flex-row md:items-center md:justify-between md:px-8"><p><span class="font-bold text-ink">Marchica Trips</span> · Nador, Maroc</p><nav class="flex gap-5" aria-label="Navigation de pied de page"><a href="/">Accueil</a><a href="/html/activites.html">Activités</a><a href="/html/faq.html">FAQ</a></nav></div></footer>
+    <script type="module">
+      const form = document.querySelector("form");
+      const status = document.querySelector("#form-status");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        status.textContent = "Votre demande est prête. La réservation en ligne sera bientôt disponible.";
+      });
+    </script>
+  </body>
+</html>

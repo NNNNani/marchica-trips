@@ -1,1 +1,204 @@
+@import "tailwindcss";
 
+@theme {
+  --color-ink: #173b36;
+  --color-lagoon: #08766f;
+  --color-lagoon-deep: #075a55;
+  --color-sand: #f7f5ef;
+  --color-paper: #fffefa;
+  --color-coral: #b94f37;
+  --color-muted: #526762;
+  --color-line: #d9e2dd;
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-display: Georgia, "Times New Roman", serif;
+  --container-content: 72rem;
+  --spacing-body-min: 20rem;
+  --spacing-focus-ring: 0.1875rem;
+  --spacing-focus-offset: 0.1875rem;
+  --spacing-hero-mobile: 34rem;
+  --spacing-hero-desktop: 40rem;
+  --tracking-brand: 0.18em;
+  --tracking-eyebrow: 0.16em;
+  --duration-instant: 1ms;
+  --radius-card: 1.25rem;
+  --radius-pill: 9999px;
+  --shadow-card: 0 1rem 2.5rem -1.5rem rgb(23 59 54 / 30%);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sand font-sans text-ink antialiased;
+    min-width: var(--spacing-body-min);
+  }
+
+  a {
+    @apply text-lagoon-deep underline-offset-4;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  :focus-visible {
+    outline: var(--spacing-focus-ring) solid var(--color-coral);
+    outline-offset: var(--spacing-focus-offset);
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
+  input,
+  select,
+  textarea {
+    accent-color: var(--color-lagoon);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: var(--duration-instant) !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: var(--duration-instant) !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    @apply fixed left-4 top-4 z-50 -translate-y-32 rounded-pill bg-ink px-5 py-3 font-semibold text-white;
+  }
+
+  .skip-link:focus {
+    @apply translate-y-0;
+  }
+
+  .site-header {
+    @apply border-b border-line bg-paper;
+  }
+
+  .site-header__inner {
+    @apply mx-auto flex max-w-content items-center justify-between gap-4 px-5 py-4 md:px-8;
+  }
+
+  .brand {
+    @apply inline-flex items-center gap-3 no-underline;
+  }
+
+  .brand__mark {
+    @apply grid size-11 place-items-center rounded-full bg-lagoon text-lg font-bold text-white;
+  }
+
+  .brand__name {
+    @apply font-display text-xl font-bold leading-none text-ink;
+  }
+
+  .brand__tagline {
+    @apply mt-1 block text-xs font-medium tracking-wide text-muted;
+  }
+
+  .desktop-nav {
+    @apply hidden items-center gap-7 md:flex;
+  }
+
+  .desktop-nav a,
+  .mobile-nav a {
+    @apply font-semibold text-ink no-underline;
+  }
+
+  .desktop-nav a[aria-current="page"]:not(.button),
+  .mobile-nav a[aria-current="page"] {
+    @apply text-lagoon-deep underline decoration-2 underline-offset-8;
+  }
+
+  .mobile-menu {
+    @apply relative md:hidden;
+  }
+
+  .mobile-menu > summary {
+    @apply list-none rounded-pill border border-line px-4 py-2 font-semibold text-ink;
+  }
+
+  .mobile-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mobile-menu > summary::after {
+    content: " +";
+  }
+
+  .mobile-menu[open] > summary::after {
+    content: " -";
+  }
+
+  .mobile-menu[open] > summary {
+    @apply border-lagoon bg-sand;
+  }
+
+  .mobile-nav {
+    @apply absolute right-0 top-14 z-20 grid min-w-56 gap-1 rounded-card border border-line bg-paper p-3 shadow-card;
+  }
+
+  .mobile-nav a {
+    @apply rounded-lg px-3 py-3;
+  }
+
+  .mobile-nav a:hover {
+    @apply bg-sand no-underline;
+  }
+
+  .button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-pill bg-lagoon px-6 py-3 text-center font-bold text-white no-underline transition-colors;
+  }
+
+  .button:hover {
+    @apply bg-lagoon-deep text-white no-underline;
+  }
+
+  .button--light {
+    @apply bg-paper text-ink;
+  }
+
+  .button--light:hover {
+    @apply bg-sand text-ink;
+  }
+
+  .eyebrow {
+    @apply text-sm font-bold uppercase tracking-eyebrow text-lagoon-deep;
+  }
+
+  .section-title {
+    @apply font-display text-3xl font-bold leading-tight text-ink md:text-4xl;
+  }
+
+  .activity-card {
+    @apply overflow-hidden rounded-card border border-line bg-paper shadow-card;
+  }
+
+  .activity-card__image {
+    @apply h-52 w-full object-cover;
+  }
+
+  .activity-card__illustration {
+    @apply grid h-52 w-full place-items-center bg-lagoon px-6 text-center font-display text-3xl font-bold text-white;
+  }
+
+  .activity-card__body {
+    @apply flex min-h-48 flex-col items-start p-5;
+  }
+
+  .form-label {
+    @apply mb-2 block font-semibold text-ink;
+  }
+
+  .form-control {
+    @apply min-h-12 w-full rounded-lg border border-line bg-paper px-4 py-3 text-ink placeholder:text-muted;
+  }
+}
