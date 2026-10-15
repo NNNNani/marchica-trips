@@ -13,24 +13,24 @@
 
   <!-- ===== Header ===== -->
   <header class="bg-deep">
-    <div class="mx-auto w-full max-w-[1200px] px-8 flex items-center justify-between h-16">
+    <div class="mx-auto w-full max-w-content px-8 flex flex-wrap items-center justify-between gap-y-3 py-3 md:gap-y-0 md:py-0 md:h-16">
       <a href="/src/html/index.html" class="flex items-center gap-[0.6rem] no-underline" aria-label="Marchica Trips — accueil">
         <img src="/images/logo.svg" alt="" width="44" height="28" />
         <span class="text-white font-extrabold tracking-[0.06em] text-[0.95rem] leading-[1.1]">MARCHICA<br /><span class="text-[0.68rem] font-semibold tracking-[0.28em]">TRIPS</span></span>
       </a>
-      <nav aria-label="Navigation principale">
-        <ul class="flex gap-8">
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white aria-[current='page']:text-white aria-[current='page']:border-primary" href="/src/html/index.html" aria-current="page">Accueil</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/actevitiy.html">Activités</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/apropos.html">À propos</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/contact.html">Contact</a></li>
+      <nav aria-label="Navigation principale" class="order-last w-full md:order-none md:w-auto">
+        <ul class="flex flex-wrap gap-x-6 gap-y-1 md:gap-8">
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white aria-[current='page']:text-white aria-[current='page']:border-primary" href="/src/html/index.html" aria-current="page">Accueil</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/actevitiy.html">Activités</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/apropos.html">À propos</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/contact.html">Contact</a></li>
         </ul>
       </nav>
       <div class="flex items-center gap-[1.2rem]">
         <a href="/src/html/actevitiy.html" aria-label="Rechercher une activité" class="text-white no-underline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </a>
-        <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" href="/src/html/reservation.html">Réserver</a>
+        <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline hover:bg-primary-hover" href="/src/html/reservation.html">Réserver</a>
       </div>
     </div>
   </header>
@@ -40,25 +40,25 @@
     <section aria-labelledby="titre-hero" class="relative min-h-[560px] flex items-center overflow-hidden">
       <img src="/images/hero_actevity.jpg" alt="Kayakiste sur la lagune de Marchica au coucher du soleil, face aux montagnes du Rif" class="absolute inset-0 w-full h-full object-cover" fetchpriority="high" />
       <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(250,247,241,0.92)_0%,rgba(250,247,241,0.55)_38%,rgba(10,53,66,0)_70%)]" aria-hidden="true"></div>
-      <div class="mx-auto w-full max-w-[1200px] px-8 relative pt-16 pb-[88px]">
-        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Explorez la Méditerranée</p>
+      <div class="mx-auto w-full max-w-content px-8 relative pt-16 pb-[88px]">
+        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Explorez la Méditerranée</p>
         <h1 id="titre-hero" class="text-[3.2rem] leading-[1.05] font-extrabold mt-[0.6rem] mb-4 max-w-[480px]">Vivez Marchica autrement.</h1>
-        <p class="text-[1.02rem] text-[#23434f] max-w-[420px] mb-[1.6rem]">Des excursions, des paysages et des expériences inoubliables à Nador.</p>
+        <p class="text-[1.02rem] text-ink-soft max-w-[420px] mb-[1.6rem]">Des excursions, des paysages et des expériences inoubliables à Nador.</p>
         <div class="flex gap-[0.9rem] flex-wrap">
-          <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" href="/src/html/actevitiy.html">Découvrir les activités <span aria-hidden="true">→</span></a>
-          <a class="inline-flex items-center gap-[0.6rem] bg-transparent text-ink font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-ink leading-none no-underline backdrop-blur-[2px] hover:bg-[rgba(11,52,66,0.08)]" href="/src/html/apropos.html">En savoir plus</a>
+          <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline hover:bg-primary-hover" href="/src/html/actevitiy.html">Découvrir les activités <span aria-hidden="true">→</span></a>
+          <a class="inline-flex items-center gap-[0.6rem] bg-transparent text-ink font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-ink leading-none no-underline backdrop-blur-[2px] hover:bg-ink/8" href="/src/html/apropos.html">En savoir plus</a>
         </div>
         <dl class="flex gap-[2.4rem] mt-12">
           <div class="flex gap-[0.6rem] items-center">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0b6e81" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <svg class="stroke-primary" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <div><dt class="sr-only">Activités uniques</dt><dd class="font-extrabold text-[0.95rem]">+ 10<br /><span class="font-medium text-[0.78rem] text-muted">Activités uniques</span></dd></div>
           </div>
           <div class="flex gap-[0.6rem] items-center">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="#0b6e81" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6v1H3v-1Zm13 1v-1c0-2-.9-3.8-2.4-5 1-.6 2.2-1 3.4-1 2.8 0 5 2.2 5 5v2h-6Z"/></svg>
+            <svg class="fill-primary" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.4"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6v1H3v-1Zm13 1v-1c0-2-.9-3.8-2.4-5 1-.6 2.2-1 3.4-1 2.8 0 5 2.2 5 5v2h-6Z"/></svg>
             <div><dd class="font-extrabold text-[0.95rem]">+ 2000<br /><span class="font-medium text-[0.78rem] text-muted">Voyageurs heureux</span></dd></div>
           </div>
           <div class="flex gap-[0.6rem] items-center">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0b6e81" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
+            <svg class="fill-primary" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>
             <div><dd class="font-extrabold text-[0.95rem]">4.9/5<br /><span class="font-medium text-[0.78rem] text-muted">Avis clients</span></dd></div>
           </div>
         </dl>
@@ -71,32 +71,32 @@
 
     <!-- ===== Activités ===== -->
     <section aria-labelledby="titre-activites" class="pt-14 pb-2">
-      <div class="mx-auto w-full max-w-[1200px] px-8">
+      <div class="mx-auto w-full max-w-content px-8">
         <div class="flex justify-between items-end mb-[1.6rem]">
           <div>
-            <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Nos expériences</p>
+            <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Nos expériences</p>
             <h2 id="titre-activites" class="text-[1.7rem] font-extrabold mt-[0.4rem]">Choisissez votre aventure</h2>
           </div>
           <a href="/src/html/actevitiy.html" class="text-[0.82rem] font-bold text-primary no-underline">Voir toutes les activités <span aria-hidden="true">→</span></a>
         </div>
-        <ul class="grid grid-cols-4 gap-[1.4rem]">
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)]">
+        <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-[1.4rem]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card">
             <div class="relative">
               <img class="w-full h-[190px] object-cover block" src="/images/tivity7.jpg" alt="Deux kayakistes pagayant sur les eaux calmes de la lagune" loading="lazy" />
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] absolute left-[14px] bottom-[-20px]" aria-hidden="true">
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge absolute left-[14px] bottom-[-20px]" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16c2 0 2-1 4-1s2 1 4 1 2-1 4-1 2 1 4 1 2-1 4-1"/><path d="M4 15l8-8 8 3-8 8-8-3Z"/></svg>
               </span>
             </div>
             <div class="pt-[1.8rem] px-[1.2rem] pb-[1.2rem]">
               <h3 class="text-[0.95rem] font-extrabold mb-[0.4rem]">Kayak</h3>
               <p class="text-[0.82rem] text-muted mb-4">Explorez la lagune et ses eaux cristallines.</p>
-              <a href="/src/html/detail-actevite.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
+              <a href="/src/html/detaille_acte/actv-1.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
             </div>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card">
             <div class="relative">
               <img class="w-full h-[190px] object-cover block" src="/images/actevity6.jpg" alt="Randonnée en quad dans la région de Nador" loading="lazy" />
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] absolute left-[14px] bottom-[-20px]" aria-hidden="true">
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge absolute left-[14px] bottom-[-20px]" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="cu
                 rrentColor" stroke-width="2"><path d="m3 18 6-9 4 3 4-6 4 5"/><path d="M3 21h18"/></svg>
               </span>
@@ -104,33 +104,33 @@
             <div class="pt-[1.8rem] px-[1.2rem] pb-[1.2rem]">
               <h3 class="text-[0.95rem] font-extrabold mb-[0.4rem]">Quad</h3>
               <p class="text-[0.82rem] text-muted mb-4">Vivez l'aventure sur les pistes de Nador.</p>
-              <a href="/src/html/detail-actevite.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
+              <a href="/src/html/detaille_acte/actv-2.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
             </div>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card">
             <div class="relative">
               <img class="w-full h-[190px] object-cover block" src="/images/actevity4.jpg" alt="Bateau de plaisance naviguant sur la lagune" loading="lazy" />
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] absolute left-[14px] bottom-[-20px]" aria-hidden="true">
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge absolute left-[14px] bottom-[-20px]" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15h16l-2 5H6l-2-5Z"/><path d="M12 15V4M12 4l5 3"/></svg>
               </span>
             </div>
             <div class="pt-[1.8rem] px-[1.2rem] pb-[1.2rem]">
               <h3 class="text-[0.95rem] font-extrabold mb-[0.4rem]">Balade en bateau</h3>
               <p class="text-[0.82rem] text-muted mb-4">Admirez la beauté de Marchica depuis la mer.</p>
-              <a href="/src/html/detail-actevite.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
+              <a href="/src/html/detaille_acte/actv-3.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
             </div>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card">
             <div class="relative">
               <img class="w-full h-[190px] object-cover block" src="/images/acitivite1.jpg" alt="Observatrice d'oiseaux au milieu d'une nuée d'oiseaux migrateurs" loading="lazy" />
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] absolute left-[14px] bottom-[-20px]" aria-hidden="true">
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge absolute left-[14px] bottom-[-20px]" aria-hidden="true">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c3-1 5-4 6-7 2 1 6 2 9 1-1 3-3 5-6 6l4 4h-5l-3-3c-2 1-4 1-5-1Z"/></svg>
               </span>
             </div>
             <div class="pt-[1.8rem] px-[1.2rem] pb-[1.2rem]">
               <h3 class="text-[0.95rem] font-extrabold mb-[0.4rem]">Observation des oiseaux</h3>
               <p class="text-[0.82rem] text-muted mb-4">Découvrez une faune riche et préservée.</p>
-              <a href="/src/html/detail-actevite.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
+              <a href="/src/html/detaille_acte/actv-4.html" class="text-[0.82rem] font-bold text-primary no-underline">Découvrir <span aria-hidden="true">→</span></a>
             </div>
           </li>
         </ul>
@@ -139,26 +139,26 @@
 
     <!-- ===== Pourquoi nous ===== -->
     <section aria-labelledby="titre-pourquoi" class="py-14">
-      <div class="mx-auto w-full max-w-[1200px] px-8 grid grid-cols-2 gap-12 items-center">
-        <img src="/images/actevity5.jpg" alt="Randonneurs sur les crêtes du massif du Gourougou dominant la lagune" loading="lazy" class="w-full h-[380px] object-cover rounded-[14px]" />
+      <div class="mx-auto w-full max-w-content px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <img src="/images/actevity5.jpg" alt="Randonneurs sur les crêtes du massif du Gourougou dominant la lagune" loading="lazy" class="w-full h-[380px] object-cover rounded-card" />
         <div>
-          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Pourquoi nous choisir ?</p>
+          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Pourquoi nous choisir ?</p>
           <h2 id="titre-pourquoi" class="text-[1.7rem] font-extrabold mt-[0.4rem] mb-[1.4rem]">Une expérience authentique<br />et locale</h2>
-          <ul class="grid grid-cols-2 gap-[1.4rem]">
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-[1.4rem]">
             <li class="flex gap-[0.8rem]">
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 7 4 11 4 15a8 8 0 0 0 16 0c0-4-3-8-8-13Zm0 18a1 1 0 0 1-1-1c0-3 2-6 5-9-.5 4-2 8-4 10Z"/></svg></span>
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 7 4 11 4 15a8 8 0 0 0 16 0c0-4-3-8-8-13Zm0 18a1 1 0 0 1-1-1c0-3 2-6 5-9-.5 4-2 8-4 10Z"/></svg></span>
               <div><h3 class="text-[0.86rem] font-extrabold my-[0.3rem]">Nature préservée</h3><p class="text-[0.8rem] text-muted">Des paysages uniques à couper le souffle.</p></div>
             </li>
             <li class="flex gap-[0.8rem]">
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.5-3.3-3.3 1.4-1.4 1.9 1.9 4.5-4.5 1.4 1.4-5.9 5.9Z"/></svg></span>
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Zm-1.2 14.5-3.3-3.3 1.4-1.4 1.9 1.9 4.5-4.5 1.4 1.4-5.9 5.9Z"/></svg></span>
               <div><h3 class="text-[0.86rem] font-extrabold my-[0.3rem]">Sécurité garantie</h3><p class="text-[0.8rem] text-muted">Un encadrement professionnel et expérimenté.</p></div>
             </li>
             <li class="flex gap-[0.8rem]">
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21S3 14.5 3 8.8C3 6 5.2 4 7.8 4c1.7 0 3.2.9 4.2 2.3C13 4.9 14.5 4 16.2 4 18.8 4 21 6 21 8.8c0 5.7-9 12.2-9 12.2Z"/></svg></span>
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21S3 14.5 3 8.8C3 6 5.2 4 7.8 4c1.7 0 3.2.9 4.2 2.3C13 4.9 14.5 4 16.2 4 18.8 4 21 6 21 8.8c0 5.7-9 12.2-9 12.2Z"/></svg></span>
               <div><h3 class="text-[0.86rem] font-extrabold my-[0.3rem]">Passion locale</h3><p class="text-[0.8rem] text-muted">Une équipe qui connaît et aime sa région.</p></div>
             </li>
             <li class="flex gap-[0.8rem]">
-              <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg></span>
+              <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge flex-shrink-0" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg></span>
               <div><h3 class="text-[0.86rem] font-extrabold my-[0.3rem]">Souvenirs inoubliables</h3><p class="text-[0.8rem] text-muted">Des moments qui restent pour toujours.</p></div>
             </li>
           </ul>
@@ -168,45 +168,45 @@
 
     <!-- ===== Destination phare ===== -->
     <section aria-labelledby="titre-lagune" class="pb-12">
-      <div class="mx-auto w-full max-w-[1200px] px-8">
-        <div class="relative rounded-[14px] overflow-hidden min-h-[260px] flex items-center">
+      <div class="mx-auto w-full max-w-content px-8">
+        <div class="relative rounded-card overflow-hidden min-h-[260px] flex items-center">
           <img src="/images/hero_actevity.jpg" alt="Kayak au coucher du soleil sur la lagune de Marchica, face aux montagnes" loading="lazy" class="absolute inset-0 w-full h-full object-cover" />
           <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(10,53,66,0.88)_0%,rgba(10,53,66,0.45)_55%,rgba(10,53,66,0)_100%)]" aria-hidden="true"></div>
           <div class="relative p-[2.4rem] max-w-[520px]">
-            <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-[#7fd1de]">Destination phare</p>
+            <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-soft">Destination phare</p>
             <h2 id="titre-lagune" class="text-white text-[1.5rem] font-extrabold mt-[0.4rem] mb-[0.6rem]">La lagune de Marchica</h2>
-            <p class="text-[#ffffffd9] text-[0.86rem] mb-[1.2rem]">Un joyau naturel entre mer et montagne, parfait pour une escapade inoubliable.</p>
-            <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" href="/src/html/actevitiy.html">Explorer la destination <span aria-hidden="true">→</span></a>
+            <p class="text-white/85 text-[0.86rem] mb-[1.2rem]">Un joyau naturel entre mer et montagne, parfait pour une escapade inoubliable.</p>
+            <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline hover:bg-primary-hover" href="/src/html/actevitiy.html">Explorer la destination <span aria-hidden="true">→</span></a>
           </div>
-          <p class="absolute right-5 bottom-4 text-white text-[0.75rem] font-bold bg-[rgba(0,0,0,0.45)] py-[0.4rem] px-[0.8rem] rounded-[999px]">◉ Nador, Maroc</p>
+          <p class="absolute right-5 bottom-4 text-white text-[0.75rem] font-bold bg-[rgba(0,0,0,0.45)] py-[0.4rem] px-[0.8rem] rounded-pill">◉ Nador, Maroc</p>
         </div>
       </div>
     </section>
 
     <!-- ===== Témoignages ===== -->
     <section aria-labelledby="titre-avis" class="pb-14">
-      <div class="mx-auto w-full max-w-[1200px] px-8">
-        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Ce qu'ils disent de nous</p>
+      <div class="mx-auto w-full max-w-content px-8">
+        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Ce qu'ils disent de nous</p>
         <h2 id="titre-avis" class="text-[1.7rem] font-extrabold mt-[0.4rem] mb-[1.4rem]">Témoignages</h2>
-        <ul class="grid grid-cols-3 gap-[1.4rem]">
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-[1.4rem] flex gap-4">
-            <img src="/images/actevitie3.jpg" alt="Portrait de Sophie L." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-[999px] object-cover flex-shrink-0" />
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-[1.4rem]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-[1.4rem] flex gap-4">
+            <img src="/images/actevitie3.jpg" alt="Portrait de Sophie L." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-pill object-cover flex-shrink-0" />
             <div>
               <p class="text-[0.82rem] italic mb-[0.6rem]">« Une expérience incroyable ! L'équipe est au top et les paysages sont à couper le souffle. »</p>
               <p class="text-[0.8rem] font-extrabold">Sophie L.<br /><span class="font-medium text-muted">Voyageuse</span></p>
               <p class="text-star tracking-[0.15em] mt-[0.3rem]" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
             </div>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-[1.4rem] flex gap-4">
-            <img src="/images/actevity6.jpg" alt="Portrait de Karim B." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-[999px] object-cover flex-shrink-0" />
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-[1.4rem] flex gap-4">
+            <img src="/images/actevity6.jpg" alt="Portrait de Karim B." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-pill object-cover flex-shrink-0" />
             <div>
               <p class="text-[0.82rem] italic mb-[0.6rem]">« Le kayak au coucher du soleil était magique. Je recommande à 100 % ! »</p>
               <p class="text-[0.8rem] font-extrabold">Karim B.<br /><span class="font-medium text-muted">Voyageur</span></p>
               <p class="text-star tracking-[0.15em] mt-[0.3rem]" aria-label="Note : 5 étoiles sur 5">★★★★★</p>
             </div>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-[1.4rem] flex gap-4">
-            <img src="/images/actevity4.jpg" alt="Portrait de Lina M." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-[999px] object-cover flex-shrink-0" />
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-[1.4rem] flex gap-4">
+            <img src="/images/actevity4.jpg" alt="Portrait de Lina M." width="52" height="52" loading="lazy" class="w-[52px] h-[52px] rounded-pill object-cover flex-shrink-0" />
             <div>
               <p class="text-[0.82rem] italic mb-[0.6rem]">« Tout était parfaitement organisé. Une vraie découverte de la région. »</p>
               <p class="text-[0.8rem] font-extrabold">Lina M.<br /><span class="font-medium text-muted">Voyageuse</span></p>
@@ -219,18 +219,18 @@
 
     <!-- ===== Newsletter ===== -->
     <section aria-label="Restez informé" class="bg-primary">
-      <div class="mx-auto w-full max-w-[1200px] px-8 flex justify-between items-center pt-5 pb-5 gap-8">
+      <div class="mx-auto w-full max-w-content px-8 flex flex-wrap justify-between items-center pt-5 pb-5 gap-8">
         <div class="flex gap-4 items-center">
-          <span class="w-11 h-11 rounded-[999px] border border-[#ffffff99] inline-flex items-center justify-center text-white" aria-hidden="true">✉</span>
+          <span class="w-11 h-11 rounded-pill border border-white/60 inline-flex items-center justify-center text-white" aria-hidden="true">✉</span>
           <div>
             <h2 class="text-white text-[0.95rem] font-extrabold">Restez informé</h2>
-            <p class="text-[#ffffffd9] text-[0.78rem] mt-[0.2rem]">Recevez nos meilleures offres et nouveautés directement dans votre boîte mail.</p>
+            <p class="text-white/85 text-[0.78rem] mt-[0.2rem]">Recevez nos meilleures offres et nouveautés directement dans votre boîte mail.</p>
           </div>
         </div>
-        <form action="#" method="post" class="flex bg-white rounded-[999px] pt-1 pr-1 pb-1 pl-4 items-center min-w-[380px]">
+        <form action="#" method="post" class="flex bg-white rounded-pill pt-1 pr-1 pb-1 pl-4 items-center min-w-0 w-full md:w-auto md:min-w-[380px]">
           <label for="newsletter-email" class="sr-only">Votre adresse e-mail</label>
-          <input id="newsletter-email" name="email" type="email" required placeholder="Votre adresse e-mail" class="border-0 outline-0 flex-1 font-[inherit] text-[0.82rem]" />
-          <button class="inline-flex items-center gap-[0.6rem] bg-deep text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline" type="submit">S'inscrire</button>
+          <input id="newsletter-email" name="email" type="email" required placeholder="Votre adresse e-mail" class="border-0 outline-0 flex-1 min-w-0 font-[inherit] text-[0.82rem]" />
+          <button class="inline-flex items-center gap-[0.6rem] bg-deep text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline" type="submit">S'inscrire</button>
         </form>
       </div>
     </section>
@@ -238,26 +238,26 @@
 
   <!-- ===== Footer ===== -->
   <footer class="bg-deep text-white">
-    <div class="mx-auto w-full max-w-[1200px] px-8 grid grid-cols-[2fr_1fr_1fr_1.4fr] gap-8 pt-10 pb-7">
+    <div class="mx-auto w-full max-w-content px-8 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.4fr] gap-8 pt-10 pb-7">
       <div>
         <p class="flex items-center gap-[0.6rem] mb-[0.6rem]">
           <img src="/images/logo.svg" alt="" width="44" height="28" />
           <span class="font-extrabold tracking-[0.06em] text-[0.95rem] leading-[1.1]">MARCHICA<br /><span class="text-[0.68rem] font-semibold tracking-[0.28em]">TRIPS</span></span>
         </p>
-        <p class="text-[0.8rem] text-[#ffffffbf]">Explorez. Découvrez. Vivez.</p>
+        <p class="text-[0.8rem] text-white/75">Explorez. Découvrez. Vivez.</p>
       </div>
       <nav aria-label="Liens utiles">
-        <h2 class="text-[0.75rem] font-extrabold text-[#3fb6c9] mb-[0.8rem]">Liens utiles</h2>
+        <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Liens utiles</h2>
         <ul class="text-[0.8rem] grid gap-[0.4rem]">
-          <li><a href="/src/html/index.html" class="text-[#ffffffcc] no-underline">Accueil</a></li>
-          <li><a href="/src/html/actevitiy.html" class="text-[#ffffffcc] no-underline">Activités</a></li>
-          <li><a href="/src/html/apropos.html" class="text-[#ffffffcc] no-underline">À propos</a></li>
-          <li><a href="/src/html/contact.html" class="text-[#ffffffcc] no-underline">Contact</a></li>
-          <li><a href="/src/html/faq.html" class="text-[#ffffffcc] no-underline">FAQ</a></li>
+          <li><a href="/src/html/index.html" class="text-white/80 no-underline">Accueil</a></li>
+          <li><a href="/src/html/actevitiy.html" class="text-white/80 no-underline">Activités</a></li>
+          <li><a href="/src/html/apropos.html" class="text-white/80 no-underline">À propos</a></li>
+          <li><a href="/src/html/contact.html" class="text-white/80 no-underline">Contact</a></li>
+          <li><a href="/src/html/faq.html" class="text-white/80 no-underline">FAQ</a></li>
         </ul>
       </nav>
       <div>
-        <h2 class="text-[0.75rem] font-extrabold text-[#3fb6c9] mb-[0.8rem]">Suivez-nous</h2>
+        <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Suivez-nous</h2>
         <p class="flex gap-[0.9rem]">
           <a href="#" aria-label="Facebook" class="text-white no-underline">f</a>
           <a href="#" aria-label="Instagram" class="text-white no-underline">◉</a>
@@ -265,14 +265,14 @@
           <a href="#" aria-label="TikTok" class="text-white no-underline">♪</a>
         </p>
       </div>
-      <address class="not-italic text-[0.78rem] text-[#ffffffcc] grid gap-[0.4rem] content-start">
+      <address class="not-italic text-[0.78rem] text-white/80 grid gap-[0.4rem] content-start">
         <span>◉ Nador, Maroc</span>
-        <a href="mailto:contact@marchicatrips.com" class="text-[#ffffffcc]">✉ contact@marchicatrips.com</a>
-        <a href="tel:+212612345678" class="text-[#ffffffcc]">☎ +212 6 12 34 56 78</a>
+        <a href="mailto:contact@marchicatrips.com" class="text-white/80">✉ contact@marchicatrips.com</a>
+        <a href="tel:+212612345678" class="text-white/80">☎ +212 6 12 34 56 78</a>
       </address>
     </div>
-    <div class="border-t border-[#ffffff26]">
-      <div class="mx-auto w-full max-w-[1200px] px-8 flex justify-between pt-[14px] pb-[14px] text-[0.72rem] text-[#ffffff99]">
+    <div class="border-t border-white/15">
+      <div class="mx-auto w-full max-w-content px-8 flex flex-wrap justify-between gap-x-4 gap-y-1 pt-[14px] pb-[14px] text-[0.72rem] text-white/60">
         <p>© 2025 Marchica Trips. Tous droits réservés.</p>
         <p>Mentions légales | Politique de confidentialité</p>
       </div>

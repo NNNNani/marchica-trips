@@ -12,47 +12,42 @@
   <a class="absolute left-4 -top-[60px] bg-white text-ink font-bold py-[0.6rem] px-4 rounded-lg z-[100] transition-[top] duration-150 ease-[ease] focus:top-3" href="#contenu">Aller au contenu</a>
 
   <header class="bg-deep">
-    <div class="mx-auto w-full max-w-[1200px] px-8 flex items-center justify-between h-16">
+    <div class="mx-auto w-full max-w-content px-8 flex flex-wrap items-center justify-between gap-y-3 py-3 md:gap-y-0 md:py-0 md:h-16">
       <a href="/src/html/index.html" class="flex items-center gap-[0.6rem] no-underline" aria-label="Marchica Trips — accueil">
         <img src="/images/logo.svg" alt="" width="44" height="28" />
         <span class="text-white font-extrabold tracking-[0.06em] text-[0.95rem] leading-[1.1]">MARCHICA<br /><span class="text-[0.68rem] font-semibold tracking-[0.28em]">TRIPS</span></span>
       </a>
-      <nav aria-label="Navigation principale">
-        <ul class="flex gap-8">
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/index.html">Accueil</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/actevitiy.html">Activités</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/apropos.html">À propos</a></li>
-          <li><a class="text-[#ffffffd9] text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white aria-[current='page']:text-white aria-[current='page']:border-primary" href="/src/html/contact.html" aria-current="page">Contact</a></li>
+      <nav aria-label="Navigation principale" class="order-last w-full md:order-none md:w-auto">
+        <ul class="flex flex-wrap gap-x-6 gap-y-1 md:gap-8">
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/index.html">Accueil</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/actevitiy.html">Activités</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white" href="/src/html/apropos.html">À propos</a></li>
+          <li><a class="text-white/85 text-[0.86rem] font-medium no-underline pb-1 border-b-2 border-transparent hover:text-white aria-[current='page']:text-white aria-[current='page']:border-primary" href="/src/html/contact.html" aria-current="page">Contact</a></li>
         </ul>
       </nav>
       <div class="flex items-center gap-[1.2rem]">
         <a href="/src/html/actevitiy.html" aria-label="Rechercher une activité" class="text-white no-underline">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </a>
-        <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" href="/src/html/reservation.html">Réserver</a>
+        <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline hover:bg-primary-hover" href="/src/html/reservation.html">Réserver</a>
       </div>
     </div>
   </header>
 
   <main id="contenu">
-    <!-- ===== Hero =====
-         Fond clair (crème -> sable) et non plus un aplat marine : le bleu marine
-         n'apparaît plus qu'en accent (panneau arrondi derrière la photo), ce qui
-         allège la page tout en gardant l'identité Marchica Trips. -->
-    <section aria-labelledby="titre-contact" class="bg-[linear-gradient(180deg,#f3eee3_0%,#faf7f1_78%)]">
-      <div class="mx-auto w-full max-w-[1200px] px-8 grid grid-cols-2 gap-[3.4rem] items-center pt-[52px] pb-[58px]">
+    <!-- ===== Hero ===== -->
+    <section aria-labelledby="titre-contact" class="bg-[linear-gradient(180deg,var(--color-sand)_0%,var(--color-cream)_78%)]">
+      <div class="mx-auto w-full max-w-content px-8 grid grid-cols-2 gap-[3.4rem] items-center pt-[52px] pb-[58px]">
 
         <div class="max-w-[520px]">
           <span aria-hidden="true" class="block w-[38px] h-[3px] bg-star rounded-[2px]"></span>
-          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark mt-[1.15rem]">Parlons de votre prochaine escapade</p>
+          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary mt-[1.15rem]">Parlons de votre prochaine escapade</p>
           <h1 id="titre-contact" class="text-[2.9rem] leading-[1.05] tracking-[-0.02em] font-extrabold text-ink mt-[0.6rem] mb-4">Une question ?<br />Contactez-nous.</h1>
           <p class="text-[0.97rem] leading-[1.7] text-muted max-w-[46ch] mb-[1.9rem]">Vous vous interrogez sur nos activités, sur la région de Marchica ou sur une information pratique ? Posez-nous vos questions : notre équipe vous répond avec plaisir.</p>
-          <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline transition-[background-color,box-shadow,transform] duration-[180ms] ease-[ease] hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" href="#formulaire">Écrire un message <span aria-hidden="true">→</span></a>
+          <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline transition-[background-color,box-shadow,transform] duration-[180ms] ease-[ease] hover:bg-primary-hover" href="#formulaire">Écrire un message <span aria-hidden="true">→</span></a>
         </div>
 
         <figure class="m-0">
-          <!-- Le panneau marine est calé sur la PHOTO uniquement (et non sur la figure),
-               sinon il déborde jusqu'à la légende. -->
           <div class="relative">
             <span aria-hidden="true" class="absolute -left-[14px] top-[14px] right-[14px] -bottom-[14px] bg-deep rounded-[18px]"></span>
 
@@ -64,14 +59,13 @@
                    alt="La lagune de Marchica à Nador au coucher de soleil, devant les montagnes du Gourougou"
                    class="block w-full h-auto" />
 
-              <span class="absolute left-[14px] bottom-[14px] inline-flex items-center gap-2 bg-[#fffffff0] text-ink text-[0.74rem] font-bold leading-none py-[0.55rem] px-[0.85rem] rounded-[999px] shadow-[0_4px_12px_rgba(10,53,66,0.18)]">
-                <span aria-hidden="true" class="w-[7px] h-[7px] rounded-[999px] bg-star"></span>
+              <span class="absolute left-[14px] bottom-[14px] inline-flex items-center gap-2 bg-white/94 text-ink text-[0.74rem] font-bold leading-none py-[0.55rem] px-[0.85rem] rounded-pill shadow-[0_4px_12px_rgba(10,53,66,0.18)]">
+                <span aria-hidden="true" class="w-[7px] h-[7px] rounded-pill bg-star"></span>
                 Au cœur de Marchica
               </span>
             </div>
           </div>
 
-          <figcaption class="mt-[1.6rem] text-right text-[0.68rem] text-muted">Photo : Houssain tork — CC BY-SA 4.0</figcaption>
         </figure>
 
       </div>
@@ -79,26 +73,26 @@
 
     <!-- ===== Moyens de contact ===== -->
     <section aria-labelledby="titre-joindre" class="pt-[46px] pb-[6px]">
-      <div class="mx-auto w-full max-w-[1200px] px-8">
-        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Nous joindre</p>
+      <div class="mx-auto w-full max-w-content px-8">
+        <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Nous joindre</p>
         <h2 id="titre-joindre" class="text-[1.6rem] font-extrabold text-ink mt-[0.4rem] mb-[1.4rem]">Plusieurs façons de nous parler</h2>
-        <ul class="grid grid-cols-3 gap-[1.4rem]">
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-6">
-            <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] mb-[0.9rem]" aria-hidden="true">✉</span>
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-[1.4rem]">
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-6">
+            <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge mb-[0.9rem]" aria-hidden="true">✉</span>
             <h3 class="text-[0.95rem] font-extrabold text-ink mb-[0.4rem]">Par e-mail</h3>
             <p class="text-[0.85rem] text-ink mb-[0.3rem]"><a href="mailto:contact@marchicatrips.com" class="text-primary font-bold no-underline">contact@marchicatrips.com</a></p>
             <p class="text-[0.78rem] text-muted">Réponse sous 24 h</p>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-6">
-            <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] mb-[0.9rem]" aria-hidden="true">☎</span>
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-6">
+            <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge mb-[0.9rem]" aria-hidden="true">☎</span>
             <h3 class="text-[0.95rem] font-extrabold text-ink mb-[0.4rem]">Par téléphone</h3>
             <p class="text-[0.85rem] text-ink mb-[0.3rem]"><a href="tel:+212612345678" class="text-primary font-bold no-underline">+212 6 12 34 56 78</a></p>
             <p class="text-[0.78rem] text-muted">Du lundi au samedi — 9 h à 18 h</p>
           </li>
-          <li class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-6">
-            <span class="w-11 h-11 rounded-[999px] bg-badge text-primary-dark inline-flex items-center justify-center border-2 border-white shadow-[0_4px_12px_rgba(10,53,66,0.15)] mb-[0.9rem]" aria-hidden="true">◉</span>
+          <li class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-6">
+            <span class="w-11 h-11 rounded-pill bg-badge text-primary inline-flex items-center justify-center border-2 border-white shadow-badge mb-[0.9rem]" aria-hidden="true">◉</span>
             <h3 class="text-[0.95rem] font-extrabold text-ink mb-[0.4rem]">Sur place</h3>
-            <p class="text-[0.85rem] text-[#23434f] mb-[0.3rem]">Nador, Maroc</p>
+            <p class="text-[0.85rem] text-ink-soft mb-[0.3rem]">Nador, Maroc</p>
             <p class="text-[0.78rem] text-muted">À proximité de la lagune de Marchica</p>
           </li>
         </ul>
@@ -107,36 +101,33 @@
 
     <!-- ===== Formulaire de contact ===== -->
     <section id="formulaire" aria-label="Formulaire de contact" class="pt-11 pb-[72px]">
-      <div class="mx-auto w-full max-w-[1200px] px-8">
-        <form class="bg-white border border-[#efe9db] rounded-[14px] overflow-hidden shadow-[0_8px_24px_rgba(10,53,66,0.06)] p-[2.2rem] max-w-[760px] mx-auto" action="#" method="post" aria-labelledby="titre-formulaire">
-          <!-- INTÉGRATION À VENIR : formulaire front-end uniquement.
-               Aucun système d'envoi (backend, service d'e-mail, base de données) n'est branché :
-               l'attribut action="#" devra être remplacé par l'URL réelle du service d'envoi. -->
-          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary-dark">Écrivez-nous</p>
+      <div class="mx-auto w-full max-w-content px-8">
+        <form class="bg-white border border-card-line rounded-card overflow-hidden shadow-card p-[2.2rem] max-w-[760px] mx-auto" action="#" method="post" aria-labelledby="titre-formulaire">
+          <p class="text-[0.72rem] font-extrabold tracking-[0.12em] uppercase text-primary">Écrivez-nous</p>
           <h2 id="titre-formulaire" class="text-[1.5rem] font-extrabold text-ink mt-[0.4rem] mb-[0.4rem]">Envoyez-nous un message</h2>
           <p class="text-[0.84rem] text-muted mb-[1.6rem]">Les champs marqués d'un astérisque (*) sont obligatoires. Nous vous répondons personnellement.</p>
 
           <div class="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label class="block text-[0.82rem] font-bold mb-[0.4rem] text-ink" for="nom">Nom complet *</label>
-              <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-[#e2ddd0] rounded-[10px] py-[0.7rem] px-[0.9rem] placeholder:text-[#9aa7ad] focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px] focus-visible:border-primary" id="nom" name="nom" type="text" required autocomplete="name" minlength="2" placeholder="Votre nom et prénom" aria-describedby="aide-nom" />
+              <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-field-line rounded-field py-[0.7rem] px-[0.9rem] placeholder:text-placeholder focus-visible:outline-3 focus-visible:outline-focus focus-visible:outline-offset-[1px] focus-visible:border-primary" id="nom" name="nom" type="text" required autocomplete="name" minlength="2" placeholder="Votre nom et prénom" aria-describedby="aide-nom" />
               <p id="aide-nom" class="text-[0.74rem] text-muted mt-[0.4rem]">Celui que vous souhaitez voir figurer dans notre réponse.</p>
             </div>
             <div>
               <label class="block text-[0.82rem] font-bold mb-[0.4rem] text-ink" for="ville">Ville *</label>
-              <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-[#e2ddd0] rounded-[10px] py-[0.7rem] px-[0.9rem] placeholder:text-[#9aa7ad] focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px] focus-visible:border-primary" id="ville" name="ville" type="text" required autocomplete="address-level2" minlength="2" placeholder="Votre ville" />
+              <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-field-line rounded-field py-[0.7rem] px-[0.9rem] placeholder:text-placeholder focus-visible:outline-3 focus-visible:outline-focus focus-visible:outline-offset-[1px] focus-visible:border-primary" id="ville" name="ville" type="text" required autocomplete="address-level2" minlength="2" placeholder="Votre ville" />
             </div>
           </div>
 
           <div class="mb-4">
             <label class="block text-[0.82rem] font-bold mb-[0.4rem] text-ink" for="email">Adresse e-mail *</label>
-            <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-[#e2ddd0] rounded-[10px] py-[0.7rem] px-[0.9rem] placeholder:text-[#9aa7ad] focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px] focus-visible:border-primary" id="email" name="email" type="email" required autocomplete="email" placeholder="votre@email.com" aria-describedby="aide-email" />
+            <input class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-field-line rounded-field py-[0.7rem] px-[0.9rem] placeholder:text-placeholder focus-visible:outline-3 focus-visible:outline-focus focus-visible:outline-offset-[1px] focus-visible:border-primary" id="email" name="email" type="email" required autocomplete="email" placeholder="votre@email.com" aria-describedby="aide-email" />
             <p id="aide-email" class="text-[0.74rem] text-muted mt-[0.4rem]">Utilisée uniquement pour vous répondre.</p>
           </div>
 
           <div class="mb-4">
             <label class="block text-[0.82rem] font-bold mb-[0.4rem] text-ink" for="sujet">Sujet du message *</label>
-            <select class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-[#e2ddd0] rounded-[10px] py-[0.7rem] px-[0.9rem] placeholder:text-[#9aa7ad] focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px] focus-visible:border-primary" id="sujet" name="sujet" required>
+            <select class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-field-line rounded-field py-[0.7rem] px-[0.9rem] placeholder:text-placeholder focus-visible:outline-3 focus-visible:outline-focus focus-visible:outline-offset-[1px] focus-visible:border-primary" id="sujet" name="sujet" required>
               <option value="" disabled selected>Choisissez un sujet</option>
               <option value="information">Demande d'information</option>
               <option value="activite">Question sur une activité</option>
@@ -147,37 +138,37 @@
 
           <div class="mb-[1.4rem]">
             <label class="block text-[0.82rem] font-bold mb-[0.4rem] text-ink" for="message">Votre message *</label>
-            <textarea class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-[#e2ddd0] rounded-[10px] py-[0.7rem] px-[0.9rem] placeholder:text-[#9aa7ad] focus-visible:outline-3 focus-visible:outline-[rgba(14,138,160,0.35)] focus-visible:outline-offset-[1px] focus-visible:border-primary" id="message" name="message" rows="7" required minlength="10" placeholder="Décrivez votre question en quelques lignes…" aria-describedby="aide-message"></textarea>
+            <textarea class="w-full font-[inherit] text-[0.88rem] text-ink bg-white border border-field-line rounded-field py-[0.7rem] px-[0.9rem] placeholder:text-placeholder focus-visible:outline-3 focus-visible:outline-focus focus-visible:outline-offset-[1px] focus-visible:border-primary" id="message" name="message" rows="7" required minlength="10" placeholder="Décrivez votre question en quelques lignes…" aria-describedby="aide-message"></textarea>
             <p id="aide-message" class="text-[0.74rem] text-muted mt-[0.4rem]">10 caractères minimum. Plus votre message est précis, plus notre réponse sera utile.</p>
           </div>
 
-          <button class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-[999px] border border-transparent leading-none no-underline w-full justify-center hover:bg-[color-mix(in_srgb,var(--color-primary)_82%,black)]" type="submit">Envoyer le message <span aria-hidden="true">→</span></button>
+          <button class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline w-full justify-center hover:bg-primary-hover" type="submit">Envoyer le message <span aria-hidden="true">→</span></button>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="bg-deep text-white">
-    <div class="mx-auto w-full max-w-[1200px] px-8 grid grid-cols-[2fr_1fr_1fr_1.4fr] gap-8 pt-10 pb-7">
+    <div class="mx-auto w-full max-w-content px-8 grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1.4fr] gap-8 pt-10 pb-7">
       <div>
         <p class="flex items-center gap-[0.6rem] mb-[0.6rem]">
           <img src="/images/logo.svg" alt="" width="44" height="28" />
           <span class="font-extrabold tracking-[0.06em] text-[0.95rem] leading-[1.1]">MARCHICA<br /><span class="text-[0.68rem] font-semibold tracking-[0.28em]">TRIPS</span></span>
         </p>
-        <p class="text-[0.8rem] text-[#ffffffbf]">Explorez. Découvrez. Vivez.</p>
+        <p class="text-[0.8rem] text-white/75">Explorez. Découvrez. Vivez.</p>
       </div>
       <nav aria-label="Liens utiles">
-        <h2 class="text-[0.75rem] font-extrabold text-[#3fb6c9] mb-[0.8rem]">Liens utiles</h2>
+        <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Liens utiles</h2>
         <ul class="text-[0.8rem] grid gap-[0.4rem]">
-          <li><a href="/src/html/index.html" class="text-[#ffffffcc] no-underline">Accueil</a></li>
-          <li><a href="/src/html/actevitiy.html" class="text-[#ffffffcc] no-underline">Activités</a></li>
-          <li><a href="/src/html/apropos.html" class="text-[#ffffffcc] no-underline">À propos</a></li>
-          <li><a href="/src/html/contact.html" class="text-[#ffffffcc] no-underline">Contact</a></li>
-          <li><a href="/src/html/faq.html" class="text-[#ffffffcc] no-underline">FAQ</a></li>
+          <li><a href="/src/html/index.html" class="text-white/80 no-underline">Accueil</a></li>
+          <li><a href="/src/html/actevitiy.html" class="text-white/80 no-underline">Activités</a></li>
+          <li><a href="/src/html/apropos.html" class="text-white/80 no-underline">À propos</a></li>
+          <li><a href="/src/html/contact.html" class="text-white/80 no-underline">Contact</a></li>
+          <li><a href="/src/html/faq.html" class="text-white/80 no-underline">FAQ</a></li>
         </ul>
       </nav>
       <div>
-        <h2 class="text-[0.75rem] font-extrabold text-[#3fb6c9] mb-[0.8rem]">Suivez-nous</h2>
+        <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Suivez-nous</h2>
         <p class="flex gap-[0.9rem]">
           <a href="#" aria-label="Facebook" class="text-white no-underline">f</a>
           <a href="#" aria-label="Instagram" class="text-white no-underline">◉</a>
@@ -185,14 +176,14 @@
           <a href="#" aria-label="TikTok" class="text-white no-underline">♪</a>
         </p>
       </div>
-      <address class="not-italic text-[0.78rem] text-[#ffffffcc] grid gap-[0.4rem] content-start">
+      <address class="not-italic text-[0.78rem] text-white/80 grid gap-[0.4rem] content-start">
         <span>◉ Nador, Maroc</span>
-        <a href="mailto:contact@marchicatrips.com" class="text-[#ffffffcc]">✉ contact@marchicatrips.com</a>
-        <a href="tel:+212612345678" class="text-[#ffffffcc]">☎ +212 6 12 34 56 78</a>
+        <a href="mailto:contact@marchicatrips.com" class="text-white/80">✉ contact@marchicatrips.com</a>
+        <a href="tel:+212612345678" class="text-white/80">☎ +212 6 12 34 56 78</a>
       </address>
     </div>
-    <div class="border-t border-[#ffffff26]">
-      <div class="mx-auto w-full max-w-[1200px] px-8 flex justify-between py-[14px] text-[0.72rem] text-[#ffffff99]">
+    <div class="border-t border-white/15">
+      <div class="mx-auto w-full max-w-content px-8 flex flex-wrap justify-between gap-x-4 gap-y-1 py-[14px] text-[0.72rem] text-white/60">
         <p>© 2025 Marchica Trips. Tous droits réservés.</p>
         <p>Mentions légales | Politique de confidentialité</p>
       </div>

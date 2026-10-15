@@ -2,16 +2,39 @@
 @import "tailwindcss";
 
 @theme {
+  /* --- Typographie --- */
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* --- Palette --- */
   --color-deep: #0a3542;
-  --color-deep-2: #0e4453;
   --color-primary: #0b6e81;
-  --color-primary-dark: #0b6e81;
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 82%, black);
+  --color-primary-light: #3fb6c9;
+  --color-primary-soft: #7fd1de;
   --color-cream: #faf7f1;
   --color-sand: #f3eee3;
   --color-ink: #0b3442;
+  --color-ink-soft: #23434f;
   --color-muted: #57707a;
-  --color-line: #e7e0d2;
   --color-star: #f2a11d;
   --color-badge: #e8f3f5;
+
+  /* --- Cartes et champs de formulaire --- */
+  --color-card-line: #efe9db;
+  --color-field-line: #e2ddd0;
+  --color-placeholder: #9aa7ad;
+  --color-focus: rgb(14 138 160 / 35%);
+
+  /* --- Formes --- */
+  --radius-card: 14px;
+  --radius-pill: 999px;
+  --radius-field: 10px;
+
+  /* --- Ombres --- */
+  --shadow-card: 0 8px 24px rgb(10 53 66 / 6%);
+  --shadow-card-hover: 0 14px 30px rgb(10 53 66 / 14%);
+  --shadow-badge: 0 4px 12px rgb(10 53 66 / 15%);
+
+  /* --- Largeur du conteneur principal --- */
+  --container-content: 1200px;
 }
