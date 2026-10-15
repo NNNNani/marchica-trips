@@ -38,3 +38,22 @@
   /* --- Largeur du conteneur principal --- */
   --container-content: 1200px;
 }
+
+/* ===== Menu mobile : <details>/<summary>, sans JavaScript ===== */
+#menu-principal {
+  display: none;
+}
+
+#menu-mobile[open] ~ #menu-principal {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  #menu-principal {
+    display: block;
+  }
+
+  #menu-mobile {
+    display: none;
+  }
+}
