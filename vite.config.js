@@ -5,18 +5,26 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+// Sous-chemin du site publié sur GitHub Pages : https://nnnnani.github.io/marchica-trips/
+const base = '/marchica-trips/';
+
 const racineVersAccueil = {
   name: 'racine-vers-accueil',
   configureServer(server) {
     server.middlewares.use((req, _res, next) => {
-      if (req.url === '/') req.url = '/index.html';
+      // En développement, la racine du site (/marchica-trips/) sert
+      // public/index.html, qui redirige vers la page d'accueil src/html/index.html.
+      // (« / » est redirigé automatiquement vers le préfixe de base par Vite.)
+      if (req.url === base) {
+        req.url = base + 'index.html';
+      }
       next();
     });
   },
 };
 
 export default defineConfig({
-  base: './',
+  base,
   plugins: [tailwindcss(), racineVersAccueil],
   build: {
     rollupOptions: {

@@ -1,0 +1,60 @@
+name: Déployer sur GitHub Pages
+
+on:
+  # Publication automatique à chaque push sur main
+  push:
+    branches:
+      - main
+  # Permet aussi un lancement manuel depuis l'onglet Actions
+  workflow_dispatch:
+
+# Permissions minimales nécessaires au déploiement GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois, sans annuler celui en cours
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build du site (Vite)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le dépôt
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Installer les dépendances
+        run: npm ci
+      - name: Construire le site
+        run: npm run build
+      - name: Vérifier le contenu du build
+        run: |
+          test -f dist/index.html || { echo "ERREUR : dist/index.html manquant"; exit 1; }
+          test -f dist/src/html/index.html || { echo "ERREUR : dist/src/html/index.html manquant"; exit 1; }
+          ls dist/assets/*.css > /dev/null || { echo "ERREUR : CSS compilé manquant dans dist/assets/"; exit 1; }
+      - name: Configurer GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Téléverser l'artefact Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    name: Déploiement
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Déployer sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

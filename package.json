@@ -17,6 +17,7 @@
     "vite": "^7.1.7"
   },
   "allowScripts": {
+    "esbuild": true,
     "puppeteer@25.14.0": true
   }
 }
