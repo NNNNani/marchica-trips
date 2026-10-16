@@ -39,7 +39,7 @@
   --container-content: 1200px;
 }
 
-/* ===== Menu mobile : <details>/<summary>, sans JavaScript ===== */
+/* ===== Menu mobile : <details>/<summary> ===== */
 #menu-principal {
   display: none;
 }
