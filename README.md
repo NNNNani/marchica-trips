@@ -134,6 +134,101 @@ npm run build    # build production dans dist/
 npm run preview  # prévisualiser le build
 ```
 
-Pages : `/` (accueil), `/html/activites.html`, `/html/detail-activite.html`, `/html/reservation.html`, `/html/faq.html`.
+### 4. Lancer le serveur de développement
 
-> Images : placez les 8 photos d'activités dans `public/images/` (référencées en `/images/...` dans `activites.html`).
+Démarrez le serveur local avec rechargement à chaud (Hot Module Replacement) :
+
+```bash
+npm run dev
+```
+
+Une fois le serveur lancé, Vite affiche dans le terminal une URL locale, généralement :
+
+```text
+http://localhost:5173/
+```
+
+> **Note :** Ouvrez dans votre navigateur l'adresse exacte affichée dans votre terminal par Vite.
+
+### 5. Compiler pour la production
+
+Pour générer les fichiers optimisés et minifiés dans le dossier `dist/` :
+
+```bash
+npm run build
+```
+
+### 6. Prévisualiser la version de production
+
+Pour tester localement le rendu de la compilation de production :
+
+```bash
+npm run preview
+```
+
+---
+
+## 📐 Bonnes pratiques et accessibilité
+
+Le développement respecte des exigences strictes en matière de qualité web et d'accessibilité :
+
+- **Design responsive mobile-first :** Interfaces optimisées pour smartphones, tablettes et écrans larges à l'aide des points d'arrêt Tailwind CSS.
+- **Zéro JavaScript personnalisé :** Interactions (menu mobile, accordéons de la FAQ) implémentées nativement via les balises `<details>` et `<summary>`.
+- **Validation HTML native :** Formulaire de réservation sécurisé et guidé sans script (attributs `required`, `type`, `min`, `max`, `pattern`, `autocomplete`).
+- **Navigation au clavier & focus visible :** Tous les éléments interactifs (liens, boutons, résumés d'accordéon) sont navigables au clavier avec un anneau de focus distinct.
+- **Lien d'évitement :** Lien d'accès rapide au contenu principal (`#main`) pour les utilisateurs de lecteurs d'écran.
+- **Contraste WCAG AA :** Ratio de contraste supérieur ou égal à 4,5:1 pour le texte courant, assurant une parfaite lisibilité.
+- **Sémantique accessible :** Utilisation rigoureuse des balises sémantiques HTML5 (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`) et des attributs ARIA lorsque nécessaire.
+
+---
+
+## 🌿 Workflow Git
+
+Le développement collaboratif suit un workflow inspiré de Git Flow :
+
+- `main` : Version stable et déployable du projet.
+- `develop` : Branche d'intégration des fonctionnalités validées.
+- `feature/<clé-jira>-<description>` : Branche dédiée au développement d'une fonctionnalité ou d'une page.
+
+Chaque fonctionnalité doit être intégrée via une **Pull Request**, relue et approuvée par un membre de l'équipe, et associée à une user story. Aucun push direct n'est autorisé sur `main` ou `develop`.
+
+---
+
+## 👥 Équipe du projet
+
+Projet réalisé dans le cadre d'un travail collaboratif de conception et de développement web :
+
+- **Membre :** BEN ABOU ANASS
+- **Membre :** ELHOUSSINE ASSOUMA
+
+
+*Les rôles transversaux (Scrum Master, Gardien du Design System, Gardien de l'accessibilité) sont répartis au sein de l'équipe.*
+
+---
+
+## 🔗 Liens du projet
+
+- **Dépôt GitHub :** https://github.com/NNNNani/marchica-trips
+- **Maquette Figma :** https://www.figma.com/design/6RqGnsSUF6fmcDuHzKepR1/Marchica-Trips?node-id=11-3&t=heQqJaUfas7qukF1-1
+- **Site déployé :** https://nnnnani.github.io/marchica-trips/
+---
+
+## 🎯 Objectifs pédagogiques
+
+- Concevoir une interface responsive selon une approche mobile-first.
+- Appliquer les principes fondamentaux de l'accessibilité web (normes WCAG).
+- Construire un Design System réutilisable avec Tailwind CSS v4.
+- Collaborer efficacement avec Git, GitHub et les Pull Requests.
+- Organiser le travail en équipe à l'aide d'un board agile et de sprints.
+- Automatiser l'environnement de développement et de build avec Vite.
+
+---
+
+## 📄 Licence
+
+Projet réalisé dans un cadre pédagogique. Les conditions de réutilisation du code et des ressources graphiques restent à préciser par l'équipe.
+
+
+---
+
+*Marchica Trips — Explorez, découvrez et vivez la lagune de Marchica.* 🌊
