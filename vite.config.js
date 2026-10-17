@@ -2,29 +2,19 @@ import { defineConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import fs from 'node:fs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Sous-chemin du site publié sur GitHub Pages
+// Sous-chemin du site publié sur GitHub Pages : https://nnnnani.github.io/marchica-trips/
 const base = '/marchica-trips/';
-
-// Plugin pour copier index.html à la racine du dossier dist/
-const copierIndexVersRacine = {
-  name: 'copier-index-vers-racine',
-  closeBundle() {
-    const srcPath = resolve(__dirname, 'dist/src/html/index.html');
-    const destPath = resolve(__dirname, 'dist/index.html');
-    if (fs.existsSync(srcPath)) {
-      fs.copyFileSync(srcPath, destPath);
-    }
-  },
-};
 
 const racineVersAccueil = {
   name: 'racine-vers-accueil',
   configureServer(server) {
     server.middlewares.use((req, _res, next) => {
+      // En développement, la racine du site (/marchica-trips/) sert
+      // public/index.html, qui redirige vers la page d'accueil src/html/index.html.
+      // (« / » est redirigé automatiquement vers le préfixe de base par Vite.)
       if (req.url === base) {
         req.url = base + 'index.html';
       }
@@ -35,7 +25,7 @@ const racineVersAccueil = {
 
 export default defineConfig({
   base,
-  plugins: [tailwindcss(), racineVersAccueil, copierIndexVersRacine],
+  plugins: [tailwindcss(), racineVersAccueil],
   build: {
     rollupOptions: {
       input: {
