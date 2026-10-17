@@ -6,6 +6,10 @@
   <title>Paddle au lever du jour — Marchica Trips | Lagune de Nador</title>
   <meta name="description" content="Toutes les informations pour réserver le paddle au lever du jour sur la lagune de Marchica, à Nador." />
   <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+  <link rel="preload" as="image" href="/images/actevity8.webp" fetchpriority="high" />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-800.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 <body class="font-sans bg-cream text-ink antialiased">
@@ -33,7 +37,7 @@
         </ul>
       </nav>
       <div class="flex items-center gap-[1.2rem]">
-        <a href="../actevitiy.html" aria-label="Rechercher une activité" class="hidden text-white no-underline sm:inline-flex">
+        <a href="../actevitiy.html" aria-label="Rechercher une activité" class="hidden text-white no-underline sm:inline-flex p-[3px] -m-[3px]">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </a>
         <a class="inline-flex items-center gap-[0.6rem] bg-primary text-white font-bold text-[0.9rem] py-[0.7rem] px-6 rounded-pill border border-transparent leading-none no-underline hover:bg-primary-hover" href="../reservation.html">Réserver</a>
@@ -44,14 +48,14 @@
 
   <main id="contenu">
     <section class="mx-auto w-full max-w-content px-8 py-8 md:py-12">
-      <nav class="mb-6 text-sm font-semibold" aria-label="Fil d’Ariane"><a class="text-primary font-bold no-underline" href="../index.html">Accueil</a><span class="px-2 text-muted" aria-hidden="true">/</span><a class="text-primary font-bold no-underline" href="../actevitiy.html">Activités</a><span class="px-2 text-muted" aria-hidden="true">/</span><span class="text-muted" aria-current="page">Paddle au lever du jour</span></nav>
+      <nav class="mb-6 text-sm font-semibold" aria-label="Fil d’Ariane"><a class="text-primary font-bold no-underline py-[4px] -my-[4px]" href="../index.html">Accueil</a><span class="px-2 text-muted" aria-hidden="true">/</span><a class="text-primary font-bold no-underline py-[4px] -my-[4px]" href="../actevitiy.html">Activités</a><span class="px-2 text-muted" aria-hidden="true">/</span><span class="text-muted" aria-current="page">Paddle au lever du jour</span></nav>
 
       <div class="grid gap-8 lg:grid-cols-2 lg:items-start">
         <div>
           <div class="grid grid-cols-2 gap-3 overflow-hidden rounded-card md:grid-cols-2">
-            <img class="col-span-2 h-64 w-full object-cover md:col-span-1 md:row-span-2 md:h-full" src="/images/actevity8.jpg" alt="Paddle sur la lagune de Marchica par temps clair" />
-            <img class="h-36 w-full object-cover md:h-48" src="/images/lagune-mar-chica-nador.jpg" alt="Lagune de Mar Chica à Nador, eaux calmes devant les montagnes" />
-            <img class="h-36 w-full object-cover md:h-48" src="/images/standup-paddle-lagune.jpg" alt="Paddleurs glissant sur une eau turquoise" />
+            <img fetchpriority="high" width="300" height="450" class="col-span-2 h-64 w-full object-cover md:col-span-1 md:row-span-2 md:h-full" src="/images/actevity8.webp" alt="Paddle sur la lagune de Marchica par temps clair" />
+            <img fetchpriority="low" width="1200" height="900" class="h-36 w-full object-cover md:h-48" srcset="/images/lagune-mar-chica-nador-640.webp 640w, /images/lagune-mar-chica-nador-1024.webp 1024w, /images/lagune-mar-chica-nador.webp 1200w" sizes="(min-width: 1024px) 280px, 50vw" src="/images/lagune-mar-chica-nador.webp" alt="Lagune de Mar Chica à Nador, eaux calmes devant les montagnes" />
+            <img fetchpriority="low" width="1200" height="675" class="h-36 w-full object-cover md:h-48" srcset="/images/standup-paddle-lagune-640.webp 640w, /images/standup-paddle-lagune-1024.webp 1024w, /images/standup-paddle-lagune.webp 1200w" sizes="(min-width: 1024px) 280px, 50vw" src="/images/standup-paddle-lagune.webp" alt="Paddleurs glissant sur une eau turquoise" />
           </div>
           <!-- Photos complémentaires (Wikimedia Commons) : lagune-mar-chica-nador.jpg — Kokopelado, CC BY-SA 3.0 ;
                standup-paddle-lagune.jpg — Raimond Spekking, CC BY-SA 4.0 -->
@@ -109,27 +113,27 @@
       </div>
       <nav aria-label="Liens utiles">
         <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Liens utiles</h2>
-        <ul class="text-[0.8rem] grid gap-[0.4rem]">
-          <li><a href="../index.html" class="text-white/80 no-underline">Accueil</a></li>
-          <li><a href="../actevitiy.html" class="text-white/80 no-underline">Activités</a></li>
-          <li><a href="../apropos.html" class="text-white/80 no-underline">À propos</a></li>
-          <li><a href="../contact.html" class="text-white/80 no-underline">Contact</a></li>
-          <li><a href="../faq.html" class="text-white/80 no-underline">FAQ</a></li>
+        <ul class="text-[0.8rem] grid gap-[0.6rem]">
+          <li><a href="../index.html" class="py-[4px] -my-[4px] text-white/80 no-underline">Accueil</a></li>
+          <li><a href="../actevitiy.html" class="py-[4px] -my-[4px] text-white/80 no-underline">Activités</a></li>
+          <li><a href="../apropos.html" class="py-[4px] -my-[4px] text-white/80 no-underline">À propos</a></li>
+          <li><a href="../contact.html" class="py-[4px] -my-[4px] text-white/80 no-underline">Contact</a></li>
+          <li><a href="../faq.html" class="py-[4px] -my-[4px] text-white/80 no-underline">FAQ</a></li>
         </ul>
       </nav>
       <div>
         <h2 class="text-[0.75rem] font-extrabold text-primary-light mb-[0.8rem]">Suivez-nous</h2>
-        <p class="flex gap-[0.9rem]">
-          <a href="#" aria-label="Facebook" class="text-white no-underline">f</a>
-          <a href="#" aria-label="Instagram" class="text-white no-underline">◉</a>
-          <a href="#" aria-label="YouTube" class="text-white no-underline">▶</a>
-          <a href="#" aria-label="TikTok" class="text-white no-underline">♪</a>
+        <p class="flex gap-[1.25rem]">
+          <a href="#" aria-label="Facebook" class="text-white no-underline px-[9px] py-[6px] -mx-[9px] -my-[6px]">f</a>
+          <a href="#" aria-label="Instagram" class="text-white no-underline px-[9px] py-[6px] -mx-[9px] -my-[6px]">◉</a>
+          <a href="#" aria-label="YouTube" class="text-white no-underline px-[9px] py-[6px] -mx-[9px] -my-[6px]">▶</a>
+          <a href="#" aria-label="TikTok" class="text-white no-underline px-[9px] py-[6px] -mx-[9px] -my-[6px]">♪</a>
         </p>
       </div>
-      <address class="not-italic text-[0.78rem] text-white/80 grid gap-[0.4rem] content-start">
+      <address class="not-italic text-[0.78rem] text-white/80 grid gap-[0.6rem] content-start">
         <span>◉ Nador, Maroc</span>
-        <a href="mailto:contact@marchicatrips.com" class="text-white/80">✉ contact@marchicatrips.com</a>
-        <a href="tel:+212612345678" class="text-white/80">☎ +212 6 12 34 56 78</a>
+        <a href="mailto:contact@marchicatrips.com" class="py-[4px] -my-[4px] text-white/80">✉ contact@marchicatrips.com</a>
+        <a href="tel:+212612345678" class="py-[4px] -my-[4px] text-white/80">☎ +212 6 12 34 56 78</a>
       </address>
     </div>
     <div class="border-t border-white/15">

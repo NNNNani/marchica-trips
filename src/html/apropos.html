@@ -6,6 +6,10 @@
   <title>À propos — Marchica Trips | Nador</title>
   <meta name="description" content="Découvrez Marchica Trips, une équipe locale qui vous accompagne pour explorer la lagune de Marchica et les paysages de Nador." />
   <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+  <link rel="preload" as="image" href="/images/hero_actevity-1024.webp" imagesrcset="/images/hero_actevity-640.webp 640w, /images/hero_actevity-1024.webp 1024w, /images/hero_actevity-1365.webp 1365w" imagesizes="(min-width: 768px) 560px, 92vw" fetchpriority="high" />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/plus-jakarta-sans-800.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 <body class="font-sans bg-cream text-ink antialiased">
@@ -25,11 +29,11 @@
       </details>
       <nav id="menu-principal" aria-label="Navigation principale" class="order-last w-full lg:order-none lg:w-auto">
         <ul class="flex flex-col gap-y-2 lg:flex-row lg:items-center lg:gap-8">
-          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:py-0 lg:text-[0.86rem]" href="index.html">Accueil</a></li>
-          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:py-0 lg:text-[0.86rem]" href="actevitiy.html">Activités</a></li>
+          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:pt-[4px] lg:pb-0 lg:-mt-[4px] lg:text-[0.86rem]" href="index.html">Accueil</a></li>
+          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:pt-[4px] lg:pb-0 lg:-mt-[4px] lg:text-[0.86rem]" href="actevitiy.html">Activités</a></li>
           <li><a class="block border-b-2 border-primary py-2 text-[0.95rem] font-medium text-white no-underline lg:py-0 lg:pb-1 lg:text-[0.86rem]" href="apropos.html" aria-current="page">À propos</a></li>
-          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:py-0 lg:text-[0.86rem]" href="faq.html">FAQ</a></li>
-          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:py-0 lg:text-[0.86rem]" href="contact.html">Contact</a></li>
+          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:pt-[4px] lg:pb-0 lg:-mt-[4px] lg:text-[0.86rem]" href="faq.html">FAQ</a></li>
+          <li><a class="block py-2 text-[0.95rem] font-medium text-white no-underline hover:underline lg:inline-block lg:pt-[4px] lg:pb-0 lg:-mt-[4px] lg:text-[0.86rem]" href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <a class="shrink-0 rounded-[999px] bg-primary px-5 py-3 font-bold text-white no-underline hover:underline" href="reservation.html">Réserver</a>
@@ -42,13 +46,13 @@
       <div class="mx-auto grid w-full max-w-[1200px] items-center gap-8 px-5 py-12 md:grid-cols-2 md:gap-12 md:px-8 md:py-16">
         <div class="max-w-[560px]">
           <span aria-hidden="true" class="block h-[3px] w-[38px] rounded-[2px] bg-star"></span>
-          <p class="mt-5 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary-dark">Une équipe locale, une lagune à partager</p>
+          <p class="mt-5 text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary">Une équipe locale, une lagune à partager</p>
           <h1 id="titre-apropos" class="mt-3 text-4xl font-extrabold leading-tight tracking-[-0.02em] md:text-5xl">À la rencontre de Marchica</h1>
           <p class="mt-5 max-w-[48ch] text-base leading-relaxed text-muted md:text-lg">Marchica Trips vous invite à découvrir Nador et sa lagune autrement : sur l’eau, sur les sentiers ou au contact des paysages et des savoir-faire locaux.</p>
           <a class="mt-7 inline-flex items-center gap-2 rounded-[999px] bg-primary px-6 py-3 font-bold text-white no-underline hover:underline" href="actevitiy.html">Découvrir nos activités <span aria-hidden="true">→</span></a>
         </div>
         <figure>
-          <img class="h-64 w-full rounded-[14px] object-cover shadow-[0_12px_36px_rgba(10,53,66,0.14)] md:h-[420px]" src="/images/hero_actevity.jpg" alt="Kayakiste sur la lagune de Marchica au coucher du soleil, face aux montagnes" fetchpriority="high" />
+          <img width="1365" height="768" srcset="/images/hero_actevity-640.webp 640w, /images/hero_actevity-1024.webp 1024w, /images/hero_actevity-1365.webp 1365w" sizes="(min-width: 768px) 560px, 92vw" class="h-64 w-full rounded-[14px] object-cover shadow-[0_12px_36px_rgba(10,53,66,0.14)] md:h-[420px]" src="/images/hero_actevity-1024.webp" alt="Kayakiste sur la lagune de Marchica au coucher du soleil, face aux montagnes" fetchpriority="high" />
           <figcaption class="mt-3 text-sm text-muted">Marchica, entre lagune et montagnes du Rif.</figcaption>
         </figure>
       </div>
@@ -56,7 +60,7 @@
 
     <section aria-labelledby="notre-histoire" class="mx-auto grid w-full max-w-[1200px] items-center gap-8 px-5 py-14 md:grid-cols-2 md:gap-12 md:px-8 md:py-20">
       <div>
-        <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary-dark">Notre histoire</p>
+        <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary">Notre histoire</p>
         <h2 id="notre-histoire" class="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">Faire découvrir la région à hauteur d’habitant</h2>
       </div>
       <div class="grid gap-4 text-base leading-relaxed text-muted">
@@ -68,28 +72,28 @@
     <section aria-labelledby="nos-engagements" class="bg-white py-14 md:py-20">
       <div class="mx-auto w-full max-w-[1200px] px-5 md:px-8">
         <div class="mx-auto mb-9 max-w-2xl text-center">
-          <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary-dark">Ce qui nous guide</p>
+          <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary">Ce qui nous guide</p>
           <h2 id="nos-engagements" class="mt-2 text-3xl font-extrabold md:text-4xl">Des sorties pensées avec soin</h2>
           <p class="mt-4 leading-relaxed text-muted">L’accueil, la découverte et le respect du lieu sont au cœur de chaque proposition.</p>
         </div>
         <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <li class="rounded-[14px] border border-line bg-cream p-6">
-            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary-dark" aria-hidden="true">⌖</span>
+          <li class="rounded-[14px] border border-card-line bg-cream p-6">
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary" aria-hidden="true">⌖</span>
             <h3 class="text-lg font-extrabold">Ancrage local</h3>
             <p class="mt-2 leading-relaxed text-muted">Une équipe de Nador qui connaît sa région et aime la faire découvrir.</p>
           </li>
-          <li class="rounded-[14px] border border-line bg-cream p-6">
-            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary-dark" aria-hidden="true">♡</span>
+          <li class="rounded-[14px] border border-card-line bg-cream p-6">
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary" aria-hidden="true">♡</span>
             <h3 class="text-lg font-extrabold">Accueil attentionné</h3>
             <p class="mt-2 leading-relaxed text-muted">Des conseils et un accompagnement pour choisir une sortie qui vous correspond.</p>
           </li>
-          <li class="rounded-[14px] border border-line bg-cream p-6">
-            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary-dark" aria-hidden="true">✳</span>
+          <li class="rounded-[14px] border border-card-line bg-cream p-6">
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary" aria-hidden="true">✳</span>
             <h3 class="text-lg font-extrabold">Nature à découvrir</h3>
             <p class="mt-2 leading-relaxed text-muted">Des expériences en plein air pour observer et apprécier les paysages de Marchica.</p>
           </li>
-          <li class="rounded-[14px] border border-line bg-cream p-6">
-            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary-dark" aria-hidden="true">✓</span>
+          <li class="rounded-[14px] border border-card-line bg-cream p-6">
+            <span class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-badge text-xl font-bold text-primary" aria-hidden="true">✓</span>
             <h3 class="text-lg font-extrabold">Sorties préparées</h3>
             <p class="mt-2 leading-relaxed text-muted">Les informations pratiques et les conditions sont partagées avant votre départ.</p>
           </li>
@@ -99,14 +103,14 @@
 
     <section aria-labelledby="territoire" class="mx-auto grid w-full max-w-[1200px] items-center gap-8 px-5 py-14 md:grid-cols-2 md:gap-12 md:px-8 md:py-20">
       <figure class="md:order-2">
-        <img class="h-64 w-full rounded-[14px] object-cover md:h-[380px]" src="/images/actevity5.jpg" alt="Randonneurs sur un sentier de montagne dans un paysage naturel" loading="lazy" />
+        <img width="736" height="981" class="h-64 w-full rounded-[14px] object-cover md:h-[380px]" src="/images/actevity5.webp" alt="Randonneurs sur un sentier de montagne dans un paysage naturel" loading="lazy" />
         <figcaption class="mt-3 text-sm text-muted">Les sentiers et les grands espaces autour de Nador.</figcaption>
       </figure>
       <div class="md:order-1">
-        <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary-dark">Notre territoire</p>
+        <p class="text-[0.72rem] font-extrabold uppercase tracking-[0.12em] text-primary">Notre territoire</p>
         <h2 id="territoire" class="mt-2 text-3xl font-extrabold leading-tight md:text-4xl">Marchica se découvre de mille façons</h2>
         <p class="mt-5 leading-relaxed text-muted">La lagune, les montagnes du Gourougou et le littoral composent un terrain d’exploration unique. Kayak, bateau, randonnée, équitation ou observation des oiseaux : chaque activité offre un autre point de vue sur la région.</p>
-        <a class="mt-6 inline-flex items-center gap-2 font-bold text-primary no-underline hover:underline" href="actevitiy.html">Parcourir les activités <span aria-hidden="true">→</span></a>
+        <a class="mt-[22px] inline-flex items-center gap-2 font-bold text-primary no-underline hover:underline py-[2px] -mb-[2px]" href="actevitiy.html">Parcourir les activités <span aria-hidden="true">→</span></a>
       </div>
     </section>
 
@@ -134,24 +138,24 @@
       </div>
       <nav aria-label="Liens utiles">
         <h2 class="mb-3 text-[0.75rem] font-extrabold text-[#3fb6c9]">Liens utiles</h2>
-        <ul class="grid gap-2 text-[0.8rem]">
-          <li><a href="index.html" class="text-white/80 no-underline hover:underline">Accueil</a></li>
-          <li><a href="actevitiy.html" class="text-white/80 no-underline hover:underline">Activités</a></li>
-          <li><a href="apropos.html" aria-current="page" class="text-white/80 no-underline hover:underline">À propos</a></li>
-          <li><a href="contact.html" class="text-white/80 no-underline hover:underline">Contact</a></li>
-          <li><a href="faq.html" class="text-white/80 no-underline hover:underline">FAQ</a></li>
+        <ul class="text-[0.8rem] grid gap-[0.6rem]">
+          <li><a href="index.html" class="py-[4px] -my-[4px] text-white/80 no-underline hover:underline">Accueil</a></li>
+          <li><a href="actevitiy.html" class="py-[4px] -my-[4px] text-white/80 no-underline hover:underline">Activités</a></li>
+          <li><a href="apropos.html" aria-current="page" class="py-[4px] -my-[4px] text-white/80 no-underline hover:underline">À propos</a></li>
+          <li><a href="contact.html" class="py-[4px] -my-[4px] text-white/80 no-underline hover:underline">Contact</a></li>
+          <li><a href="faq.html" class="py-[4px] -my-[4px] text-white/80 no-underline hover:underline">FAQ</a></li>
         </ul>
       </nav>
-      <address class="grid content-start gap-2 text-[0.8rem] not-italic text-white/80">
+      <address class="grid content-start gap-[0.6rem] text-[0.8rem] not-italic text-white/80">
         <span>Nador, Maroc</span>
-        <a href="mailto:contact@marchicatrips.com" class="text-white/80 hover:underline">contact@marchicatrips.com</a>
-        <a href="tel:+212612345678" class="text-white/80 hover:underline">+212 6 12 34 56 78</a>
+        <a href="mailto:contact@marchicatrips.com" class="py-[4px] -my-[4px] text-white/80 hover:underline">contact@marchicatrips.com</a>
+        <a href="tel:+212612345678" class="py-[4px] -my-[4px] text-white/80 hover:underline">+212 6 12 34 56 78</a>
       </address>
     </div>
     <div class="border-t border-white/15">
       <div class="mx-auto flex w-full max-w-[1200px] flex-col gap-2 px-5 py-4 text-[0.72rem] text-white/65 sm:flex-row sm:justify-between md:px-8">
         <p>© 2025 Marchica Trips. Tous droits réservés.</p>
-        <a href="faq.html" class="text-white/75">Questions fréquentes</a>
+        <a href="faq.html" class="py-[4px] -my-[4px] text-white/75">Questions fréquentes</a>
       </div>
     </div>
   </footer>
