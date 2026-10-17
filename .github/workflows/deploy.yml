@@ -40,8 +40,23 @@ jobs:
           test -f dist/index.html || { echo "ERREUR : dist/index.html manquant"; exit 1; }
           test -f dist/src/html/index.html || { echo "ERREUR : dist/src/html/index.html manquant"; exit 1; }
           ls dist/assets/*.css > /dev/null || { echo "ERREUR : CSS compilé manquant dans dist/assets/"; exit 1; }
+      - name: Garantir la source « GitHub Actions » pour GitHub Pages
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "État actuel du site Pages :"
+          gh api "repos/${{ github.repository }}/pages" --jq '{build_type, status, source}' || true
+          echo "Bascule vers la source « GitHub Actions » si nécessaire :"
+          gh api --method PUT "repos/${{ github.repository }}/pages" -f build_type=workflow
+          echo "État final du site Pages :"
+          gh api "repos/${{ github.repository }}/pages" --jq '{build_type, status}' || true
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
+        with:
+          # Sécurité : si Pages n'est pas activé (ou a été désactivé), l'activer
+          # automatiquement avec la source « GitHub Actions » (workflow).
+          enablement: true
       - name: Téléverser l'artefact Pages
         uses: actions/upload-pages-artifact@v3
         with:
